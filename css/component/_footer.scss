@@ -1,0 +1,30 @@
+@use 'styling/color' as *;
+
+.footer {
+    background-color: $color-main;
+    position: inherit;
+
+    >div {
+        padding: 1rem 0;
+        position: inherit;
+        height: 6rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+
+    }
+
+    .logo {
+        display: inline-block;
+
+        img {
+            height: 4rem;
+        }
+    }
+
+    .footer-nav {
+        & * {
+            color: white;
+        }
+    }
+}

@@ -1,0 +1,87 @@
+@use "normalize";
+@use "component/footer";
+@use "component/header";
+@use "component/styling/color" as *;
+
+
+@mixin resetMgPd {
+    margin: 0;
+    padding: 0;
+}
+
+
+* {
+    font-family: 'Noto Sans TC', sans-serif;
+    color: $color-main;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+}
+
+// RWD margin 
+$layout-breakpoint-XL: 1280px;
+$layout-breakpoint-L: 1024px;
+$layout-breakpoint-M: 768px;
+$layout-breakpoint-S: 320px;
+
+.block-margin {
+    @media (min-width: $layout-breakpoint-XL + 1) {
+        &.wide {
+            max-width: 1920px;
+            width: 80vw;
+            min-width: 1100px;
+        }
+
+        &.narrow {
+            width: 1100px;
+        }
+
+        margin: 0 auto;
+    }
+
+    @media (min-width: $layout-breakpoint-M + 1) and (max-width: $layout-breakpoint-XL) {
+        &.wide {
+            width: 85vw;
+            min-width: 668px;
+        }
+
+        &.narrow {
+            width: 896px;
+        }
+
+        margin: 0 auto;
+    }
+
+    @media (min-width: $layout-breakpoint-M + 1) and (max-width: $layout-breakpoint-L) {
+        margin: 0 50px;
+    }
+
+    @media (min-width: $layout-breakpoint-S) and (max-width: $layout-breakpoint-M) {
+        margin: 0 28px;
+    }
+
+}
+
+
+// header
+.header {
+    position: inherit;
+    height: 6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+        display: inline-block;
+
+        img {
+            height: 4rem;
+            width: 4rem;
+        }
+    }
+
+
+}
+

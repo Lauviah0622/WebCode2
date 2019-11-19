@@ -1,0 +1,95 @@
+@use 'styling/color' as *;
+
+.header {
+    position: inherit;
+    height: 6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+        display: inline-block;
+
+        img {
+            height: 4rem;
+            width: 4rem;
+        }
+    }
+
+
+}
+
+
+
+
+.nav {
+    position: inherit;
+
+
+
+    .nav-icon {
+        position: relative;
+        height: 40px;
+        width: 40px;
+
+        div {
+            transition-duration: 1s;
+            position: absolute;
+            height: 3px;
+            width: 33px;
+            background-color: $color-main;
+            transform-origin: center;
+            top: 50%;
+
+            &:nth-child(1) {
+                transform: translate(0, -12px);
+            }
+
+            &:nth-child(2) {
+                transform: translate(0, 0);
+            }
+
+            &:nth-child(3) {
+                transform: translate(0, 12px);
+
+            }
+        }
+
+    }
+
+    &:hover {
+        .nav-icon div {
+            &:nth-child(1) {
+                transform: translate(0, 0) rotate(45deg);
+            }
+
+            &:nth-child(2) {
+                transform: scale(0.0001, 1);
+            }
+
+            &:nth-child(3) {
+                transform: translate(0, 0) rotate(-45deg)
+            }
+        }
+    }
+}
+
+.nav-bar {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    line-height: 2rem;
+    text-transform: capitalize;
+
+    li {
+        display: inline-block;
+        list-style-type: none;
+        vertical-align: middle;
+        margin-left: 3rem;
+
+        a {
+            text-decoration: none;
+        }
+    }
+
+}
