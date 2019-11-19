@@ -1,0 +1,11 @@
+@use 'color' as *;
+
+* {
+    font-family: 'Noto Sans TC', sans-serif;
+    color: $color-main;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+}
