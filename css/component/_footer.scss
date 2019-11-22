@@ -1,13 +1,12 @@
-@use 'styling/color' as *;
+@import 'styling/color';
 
 .footer {
     background-color: $color-main;
     position: inherit;
 
-    >div {
-        padding: 1rem 0;
+    > div {
+        padding: 0.5rem 0;
         position: inherit;
-        height: 6rem;
         display: flex;
         justify-content: space-between;
         align-items: flex-end;

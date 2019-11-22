@@ -1,4 +1,4 @@
-@use 'color' as *;
+@import 'color';
 
 * {
     font-family: 'Noto Sans TC', sans-serif;
@@ -8,11 +8,14 @@
 }
 
 body {
-    position: relative;
+    margin: 0;
+    padding: 0;
+    margin-top: 6rem;
 }
 
 h1 {
     font-weight: 300;
+    
 }
 
 h2, h3, h4, h5, h6, p, li, a, span {
@@ -20,19 +23,21 @@ h2, h3, h4, h5, h6, p, li, a, span {
     color: rgb(13, 85, 114);
 }
 
-.page-title {
-    h1 {
-        font-weight: 500;
-        text-align: center;
-        &::after {
-            content: '';
-            display: inline-block;
-            background-image: url(../../../asset/asterisk.svg);
-            height: 15px;
-            width: 15px;
-            margin: 5px;
+html {
+    @media (min-width: $layout-breakpoint-XL + 1) {
+    //    font-size: 12px;
+    }
+
+    @media (min-width: $layout-breakpoint-M + 1) and (max-width: $layout-breakpoint-XL) {
+       
+    }
     
-        }
+    @media (min-width: $layout-breakpoint-M + 1) and (max-width: $layout-breakpoint-L) {
+       
+    }
+    
+    @media (min-width: $layout-breakpoint-S) and (max-width: $layout-breakpoint-M) {
+      
     }
 }
 

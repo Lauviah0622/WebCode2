@@ -1,10 +1,142 @@
-@use "normalize";
-@use "component/footer";
-@use "component/header";
-@use "component/project-banner";
-@use "component/styling/color" as *;
-@use "component/styling/layout";
-@use "component/styling/basic";
+@import "component/styling/normalize";
+@import "component/footer";
+@import "component/header";
+@import "component/project-banner";
+@import "component/styling/color";
+@import "component/styling/layout";
+@import "component/styling/basic";
+
+@import "component/styling/hover";
+
+section {
+    &::after {
+        content: "";
+        display: block;
+        width: 90%;
+        height: 2px;
+        background-color: $color-main;
+        margin: 20px 5%;
+    }
+    &:last-child::after {
+        display: none;
+    }
+}
+
+.visual {
+    > div {
+        height: 90vh;
+    }
+}
+
+.projects {
+    .more {
+        text-align: right;
+        width: 100%;
+
+        h3 {
+            margin: 10px 0;
+        }
+    }
+}
+
+.more {}
 
 
+.works {
+    .work-container {
+        // width: 100%;
+        margin-left: -5px;
+        margin-right: -5px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 300px 300px 300px 300px;
+        grid-template-areas:
+            "w2h1-1 w2h1-1 w1h2-2"
+            "w1h1-3 w1h1-4 w1h2-2"
+            "w1h1-5 w2h2-6 w2h2-6"
+            "w1h1-7 w2h2-6 w2h2-6";
 
+        >figure:nth-child(1) {
+            grid-area: w2h1-1;
+        }
+
+        >figure:nth-child(2) {
+            grid-area: w1h2-2;
+        }
+
+        >figure:nth-child(3) {
+            grid-area: w1h1-3;
+        }
+
+        >figure:nth-child(4) {
+            grid-area: w1h1-4;
+        }
+
+        >figure:nth-child(5) {
+            grid-area: w1h1-5;
+        }
+
+        >figure:nth-child(6) {
+            grid-area: w2h2-6;
+        }
+
+        >figure:nth-child(7) {
+            grid-area: w1h1-7;
+        }
+
+    }
+
+    .work__item {
+        margin: 5px;
+
+        >div {
+            height: 100%;
+            width: 100%;
+            background-color: rgb(231, 123, 123);
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                object-position: 50% 50%;
+            }
+        }
+    }
+
+    .work-img {
+        position: relative;
+        img {
+            object-fit: cover;
+            object-position: 50% 50%;
+            height: 100%;
+        }
+    }
+}
+
+.brands {
+    >div {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 0 10%;
+    }
+
+    .brands-logo {
+        position: relative;
+        flex: auto 1 1;
+        margin: 1vw;
+
+        &::after {
+            position: absolute;
+            content: "";
+            display: block;
+            padding-bottom: 100%;
+        }
+
+        >img {
+            height: 100%;
+            width: 100%;
+        }
+    }
+}

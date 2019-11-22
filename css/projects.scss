@@ -1,14 +1,32 @@
-@use "normalize";
-@use "component/footer";
-@use "component/header";
-@use "component/project-banner";
-@use "component/styling/layout";
-@use "component/styling/basic";
+@import "component/styling/normalize";
+@import "component/footer";
+@import "component/header";
+@import "component/project-banner";
+@import "component/styling/layout";
+@import "component/styling/basic";
+
+@import "component/styling/hover";
 
 .page-title {
+    position: relative;
     h1 {
+        height: 5em;
+        position: inherit;
         font-weight: 500;
-
         text-align: center;
+        margin: auto 0;
+        top: 0;
+        bottom: 0;
+        line-height: 5em;
+        font-size: 2em;
+        &::after {
+            content: '';
+            display: inline-block;
+            background-image: url(../../../asset/asterisk.svg);
+            height: 0.5em;
+            width: 0.5em;
+            margin: 5px;
+
+        }
     }
 }
