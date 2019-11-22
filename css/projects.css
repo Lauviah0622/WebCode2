@@ -4,4 +4,8 @@
 @use "component/project-banner";
 @use "component/styling/layout";
 @use "component/styling/basic";
-/*# sourceMappingURL=home.css.map */
+.page-title h1 {
+  font-weight: 500;
+  text-align: center;
+}
+/*# sourceMappingURL=projects.css.map */

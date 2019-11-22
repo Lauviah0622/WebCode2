@@ -2,28 +2,9 @@
 @use "component/footer";
 @use "component/header";
 @use "component/project-banner";
-@use "component/styling/color" as *;
+// @use "component/styling/color" as     *;
 @use "component/styling/layout";
 @use "component/styling/basic";
 
 
-// header
 
-
-.projects {
-    .project-img {
-        margin: 0;
-        img {
-
-            width: 100%;
-        }
-    }
-    .project-content {
-        padding: 10px;
-        display: flex;
-        .line {
-            width: 48px;
-        }
-        
-    }
-}
