@@ -17,9 +17,14 @@ section {
         background-color: $color-main;
         margin: 20px 5%;
     }
-    &:last-child::after {
+    &:nth-last-of-type(1)::after {
         display: none;
     }
+    &:nth-of-type(1)::after {
+        display: none;
+    }
+
+    
 }
 
 .visual {
