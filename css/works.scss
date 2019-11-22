@@ -1,0 +1,27 @@
+@import "component/styling/normalize";
+@import "component/footer";
+@import "component/header";
+@import "component/project-banner";
+@import "component/styling/layout";
+@import "component/styling/basic";
+
+@import "component/styling/hover";
+
+.cates-list {
+    display: block;
+    ul {
+        float: left;
+    }
+
+    li {
+        display: inline-block;
+        list-style: none;
+        list-style-type: none;
+        a {
+            text-decoration: none;
+        }
+    }
+}
+.works {
+    height: 100vh;
+}

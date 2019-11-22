@@ -8,6 +8,10 @@
 
 @import "component/styling/hover";
 
+.clip-path {
+    display: none;
+}
+
 section {
     &::after {
         content: "";
@@ -17,19 +21,87 @@ section {
         background-color: $color-main;
         margin: 20px 5%;
     }
+
     &:nth-last-of-type(1)::after {
         display: none;
     }
+
     &:nth-of-type(1)::after {
         display: none;
     }
 
-    
+
 }
 
+.top-btn {
+    right: 100px;
+    bottom: 100px;
+    position: fixed;
+    height: 50px;
+    width: 50px;
+    z-index: 100;
+    visibility: visible;
+    opacity: 1;
+    transition-duration: 0.5s;
+
+    >div {
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+        border: 2px solid #ec6c1f;
+    }
+
+    svg {
+        height: 80%;
+        width: 80%;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &.top {
+        right: 50vw;
+
+        transform: translate(65%, 0) rotate(180deg);
+    }
+}
+
+
 .visual {
-    > div {
-        height: 90vh;
+    height: 85vh;
+    position: relative;
+
+    
+    .visual-wrapper {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        
+        > * {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    .visual-border {
+
+    }
+
+    .visual-clip {
+        clip-path: url(#clip-path);
+        background-color: #ffffff;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transform: scale(1.5);
+        .mask {
+            background-color: rgb(223, 106, 106);
+        }
     }
 }
 
@@ -98,6 +170,7 @@ section {
             height: 100%;
             width: 100%;
             background-color: rgb(231, 123, 123);
+            position: relative;
 
             img {
                 height: 100%;
@@ -110,6 +183,7 @@ section {
 
     .work-img {
         position: relative;
+
         img {
             object-fit: cover;
             object-position: 50% 50%;
