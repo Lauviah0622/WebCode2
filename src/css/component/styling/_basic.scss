@@ -1,4 +1,5 @@
 @import 'color';
+// @import 'layout';
 
 * {
     font-family: 'Noto Sans TC', sans-serif;
@@ -23,23 +24,18 @@ h2, h3, h4, h5, h6, p, li, a, span {
     color: rgb(13, 85, 114);
 }
 
-html {
-    @media (min-width: $layout-breakpoint-XL + 1) {
-    //    font-size: 12px;
-    }
-
-    @media (min-width: $layout-breakpoint-M + 1) and (max-width: $layout-breakpoint-XL) {
-       
-    }
-    
-    @media (min-width: $layout-breakpoint-M + 1) and (max-width: $layout-breakpoint-L) {
-       
-    }
-    
-    @media (min-width: $layout-breakpoint-S) and (max-width: $layout-breakpoint-M) {
-      
-    }
+a {
+    text-emphasis: none;
+    text-decoration: none;
 }
 
-
-
+@mixin sepration-line{
+    &::after {
+        content: "";
+        display: block;
+        width: 90%;
+        height: 2px;
+        background-color: $color-main;
+        margin: 20px 5%;
+    }
+}

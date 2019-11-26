@@ -1,36 +1,21 @@
-@import "component/styling/normalize";
+// basic-styling
+@import 'component/styling/normalize';
+@import 'component/styling/color';
+@import 'component/styling/basic';
+@import 'component/styling/layout';
+
+// general-component
 @import "component/footer";
 @import "component/header";
-@import "component/project-banner";
-@import "component/styling/color";
-@import "component/styling/layout";
-@import "component/styling/basic";
 
+// purpose-component
+@import "component/project-banner";
+
+// hover-effect
 @import "component/styling/hover";
 
 .clip-path {
     display: none;
-}
-
-section {
-    &::after {
-        content: "";
-        display: block;
-        width: 90%;
-        height: 2px;
-        background-color: $color-main;
-        margin: 20px 5%;
-    }
-
-    &:nth-last-of-type(1)::after {
-        display: none;
-    }
-
-    &:nth-of-type(1)::after {
-        display: none;
-    }
-
-
 }
 
 .top-btn {
@@ -106,6 +91,8 @@ section {
 }
 
 .projects {
+    @include sepration-line;
+
     .more {
         text-align: right;
         width: 100%;
@@ -114,12 +101,19 @@ section {
             margin: 10px 0;
         }
     }
+
+    .filter:hover > img {
+        filter: grayscale(0%);
+    
+    }
 }
 
 .more {}
 
 
 .works {
+    @include sepration-line;
+
     .work-container {
         // width: 100%;
         margin-left: -5px;
@@ -133,33 +127,19 @@ section {
             "w1h1-5 w2h2-6 w2h2-6"
             "w1h1-7 w2h2-6 w2h2-6";
 
-        >figure:nth-child(1) {
-            grid-area: w2h1-1;
+        @mixin work-item-block($order, $gArea) {
+            >figure:nth-child(#{$order}) {
+                grid-area: $gArea;
+            }
         }
 
-        >figure:nth-child(2) {
-            grid-area: w1h2-2;
-        }
-
-        >figure:nth-child(3) {
-            grid-area: w1h1-3;
-        }
-
-        >figure:nth-child(4) {
-            grid-area: w1h1-4;
-        }
-
-        >figure:nth-child(5) {
-            grid-area: w1h1-5;
-        }
-
-        >figure:nth-child(6) {
-            grid-area: w2h2-6;
-        }
-
-        >figure:nth-child(7) {
-            grid-area: w1h1-7;
-        }
+        @include work-item-block(1, w2h1-1);
+        @include work-item-block(2, w1h2-2);
+        @include work-item-block(3, w1h1-3);
+        @include work-item-block(4, w1h1-4);
+        @include work-item-block(5, w1h1-5);
+        @include work-item-block(6, w2h2-6);
+        @include work-item-block(7, w1h1-7);
 
     }
 

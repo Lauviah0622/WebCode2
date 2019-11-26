@@ -1,27 +1,97 @@
-@import "component/styling/normalize";
+// basic-styling
+@import 'component/styling/normalize';
+@import 'component/styling/color';
+@import 'component/styling/basic';
+@import 'component/styling/layout';
+
+// general-component
 @import "component/footer";
 @import "component/header";
-@import "component/project-banner";
-@import "component/styling/layout";
-@import "component/styling/basic";
 
+// hover-effect
 @import "component/styling/hover";
 
-.cates-list {
-    display: block;
-    ul {
-        float: left;
-    }
 
-    li {
-        display: inline-block;
-        list-style: none;
-        list-style-type: none;
-        a {
-            text-decoration: none;
+// purpose-component
+@import "component/project-banner";
+@import "component/page-title";
+@import "component/work-cates-list";
+
+
+
+.works {
+    .container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: 1fr;
+        margin: 5px -5px 5rem 5px;
+
+        &::before {
+            content: '';
+            width: 0;
+            padding-bottom: 100%;
+            grid-row: 1 / 1;
+            grid-column: 1 / 1;
+        }
+
+        &>*:first-child {
+            grid-row: 1 / 1;
+            grid-column: 1 / 1;
         }
     }
-}
-.works {
-    height: 100vh;
+
+    .item {
+        background-color: rgb(226, 114, 114);
+        margin: 5px;
+
+        @mixin item-block($order, $gStart, $gEnd) {
+            &:nth-child(6n + #{$order}) {
+                grid-column-start: $gStart;
+                grid-column-end: $gEnd;
+
+            }
+        }
+
+        @include item-block(1, 1, 3);
+        @include item-block(2, 3, 4);
+        @include item-block(3, 4, 5);
+        @include item-block(4, 1, 2);
+        @include item-block(5, 2, 3);
+        @include item-block(6, 3, 5);
+
+        > div {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            .title {
+                @include abs-center;
+                z-index: 5;
+                * {
+                    text-align: center;
+                    color: white;
+                }
+
+            }
+            
+            img {
+                z-index: 0;
+                position: absolute;
+                // display: none;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: 50% 50%;
+
+
+            }
+        }
+
+    }
+
+
+    h1 {
+        display: inline-block;
+    }
+
 }

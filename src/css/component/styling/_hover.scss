@@ -1,4 +1,4 @@
-.filter > img {
+.filter > .filter-masking {
     filter: grayscale(100%);
     transition: 0.5s;
 }
@@ -18,12 +18,21 @@
 
 }
 
-.filter:hover > img {
-    filter: grayscale(0%);
-
+.filter .fade-in {
+    transition-duration: 0.5s;
+    opacity: 0;
 }
 
-.filter:hover::after {
-    opacity: 0;
+.filter:hover {
+    & > .filter-masking {
+        filter: grayscale(0%) brightness(50%) contrast(119%);
+    }
 
+    &::after {
+        opacity: 0;
+    }
+
+    .fade-in {
+        opacity: 1;
+    }
 }

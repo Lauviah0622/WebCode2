@@ -1,0 +1,96 @@
+// basic-styling
+@import 'component/styling/normalize';
+@import 'component/styling/color';
+@import 'component/styling/basic';
+@import 'component/styling/layout';
+
+// general-component
+@import "component/footer";
+@import "component/header";
+
+// purpose-component
+@import "component/gallery";
+@import "component/relate";
+@import "component/description";
+
+
+
+// hover-effect
+@import "component/styling/hover";
+
+body {
+    margin-top: 0;
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    // background-color: rgb(146, 68, 68);
+
+    &__title {
+        * {
+            color: white;
+        }
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        @include abs-center;
+
+
+    }
+
+    &__img {
+        img {
+            width: 100%;
+            height: auto;
+            
+        }
+    }
+}
+
+
+.content {
+    position: relative;
+    width: 100%;
+    flex-wrap: wrap;
+    padding-top: 2rem;
+    > div {
+        margin: 1.5rem 0;
+        display: flex;
+    }
+    .description {
+        width: 45%;
+        // background-color: rgb(224, 105, 105);
+    }
+
+    .img {
+        z-index: 1;
+        width: 55%;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+        // background-color: rgb(105, 224, 194);
+
+    }
+
+    .score {
+        position: relative;
+        > *{
+            display: inline-block;
+        }
+
+        hr {
+            z-index: 2;
+            border: 2px solid $color-main;
+            width: 10rem;
+        }
+
+        h1 {
+            font-size: 4rem;
+            color: $color-orange;
+        }
+    }
+
+}

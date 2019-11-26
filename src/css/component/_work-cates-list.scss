@@ -1,0 +1,75 @@
+@import "styling/color";
+
+.cates-list {
+    display: block;
+    display: flex;
+    justify-content: center;
+
+    ul {
+        // float: left;
+        padding: 0;
+        margin: 2rem;
+
+    }
+
+    li {
+        display: inline-block;
+        list-style: none;
+        list-style-type: none;
+        margin: 0 15px;
+        position: relative;
+
+        a {
+            text-decoration: none;
+        }
+
+        &::after {
+            padding-top: 0.3em;
+            content: "";
+            position: absolute;
+            display: block;
+            left: 0;
+            width: 0%;
+            border-bottom: solid 2px $color-orange;
+            transition-duration: 0.5s;
+        }
+
+        &:hover::after {
+            width: 100%;
+
+        }
+    }
+}
+
+.work-block {
+    &__title {
+        * {
+            display: inline-block;
+        }
+
+        h1 {
+            margin-right: 5px;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -5px;
+
+        a {
+            width: 25%;
+            display: block;   
+        }
+
+        img {
+            padding: 5px;
+            width: 100%;
+            height: auto;
+
+
+        }
+    }
+}
