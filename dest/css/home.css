@@ -826,8 +826,9 @@ a {
   margin-right: -5px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 300px 300px 300px 300px;
   grid-template-areas: "w2h1-1 w2h1-1 w1h2-2" "w1h1-3 w1h1-4 w1h2-2" "w1h1-5 w2h2-6 w2h2-6" "w1h1-7 w2h2-6 w2h2-6"; }
+  .works .work-container::before {
+    padding-bottom: 100%; }
   .works .work-container > figure:nth-child(1) {
     grid-area: w2h1-1; }
   .works .work-container > figure:nth-child(2) {
