@@ -1,14 +1,9 @@
 import gulp from 'gulp';
 import autoprefixer from 'autoprefixer';
-import browserSync from "browser-sync"
+import browserSync from "browser-sync";
 
 const $ = require('gulp-load-plugins')();
 
-
-
-function cb() {
-    console.log('123')
-}
 
 export function copyHTML(cb) {
     return gulp.src('./src/**/*.html')
@@ -34,7 +29,7 @@ export function sass() {
             }).on("error", $.sass.logError)
         )
         .pipe($.postcss(processors))
-        .pipe($.cleanCss())
+        // .pipe($.cleanCss())
         .pipe($.sourcemaps.write("."))
         .pipe(gulp.dest("./dest/css"))
 }
@@ -50,6 +45,14 @@ export function browser() {
     })
 }
 
+export function imgMinify () {
+    return gulp
+    .src(["./src/asset/**/*", "!./src/asset/*.mp4"])
+    .pipe($.imagemin())
+    .pipe(gulp.dest("./dest/asset"))
+}
+
+
 export function watch() {
     gulp.watch(["./src/**/*.html", "./src/**/*.ejs"], copyHTML)
     // gulp.watch(['./src/**/*.jade', './src/**/*.pug'], ['jade'])
@@ -61,11 +64,12 @@ export function watch() {
     console.log("watching file ~")
 }
 
+
 exports.default = gulp.parallel(
     sass,
     browser,
     copyHTML,
-    watch
+    watch,
   )
 
 

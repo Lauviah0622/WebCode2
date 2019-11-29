@@ -1,0 +1,68 @@
+// basic-styling
+@import 'component/styling/normalize';
+@import 'component/styling/color';
+@import 'component/styling/basic';
+@import 'component/styling/layout';
+
+
+// general-component
+@import "component/footer";
+@import "component/header";
+
+body {
+    margin-top: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    
+}
+
+.header {
+    position: relative;
+}
+
+.content {
+    flex: 1 1 auto;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    .map {
+        width: 70%;
+        height: 100%;
+        padding-left: 2rem;
+        float: left;
+        div {
+            height: 100%;
+            width: 100%;
+            background-color: rgb(228, 117, 117);
+        }
+    }
+
+    .info {
+        width: 30%;
+        height: 100%;
+        float: left;
+        padding-left: 2rem;
+        > * {
+        }
+        
+        h1 {
+            margin-top: 1rem;
+            margin-bottom: 0;
+        }
+        
+        h3 {
+            margin: 0;
+            margin-top: 2rem;
+            text-transform: capitalize;
+            &::after {
+                content: "."
+            }
+        }
+
+
+        p {
+            margin: 0;
+        }
+    }
+}

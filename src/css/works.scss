@@ -16,6 +16,7 @@
 @import "component/project-banner";
 @import "component/page-title";
 @import "component/work-cates-list";
+@import "component/work-gallery-item";
 
 
 
@@ -42,50 +43,25 @@
 
     .item {
         background-color: rgb(226, 114, 114);
-        margin: 5px;
+        @include work-gallery-item;
+        > div img{
+            position: absolute;
+        }
 
         @mixin item-block($order, $gStart, $gEnd) {
             &:nth-child(6n + #{$order}) {
                 grid-column-start: $gStart;
                 grid-column-end: $gEnd;
-
+                
             }
         }
-
+        
         @include item-block(1, 1, 3);
         @include item-block(2, 3, 4);
         @include item-block(3, 4, 5);
         @include item-block(4, 1, 2);
         @include item-block(5, 2, 3);
         @include item-block(6, 3, 5);
-
-        > div {
-            width: 100%;
-            height: 100%;
-            position: relative;
-            overflow: hidden;
-            .title {
-                @include abs-center;
-                z-index: 5;
-                * {
-                    text-align: center;
-                    color: white;
-                }
-
-            }
-            
-            img {
-                z-index: 0;
-                position: absolute;
-                // display: none;
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                object-position: 50% 50%;
-
-
-            }
-        }
 
     }
 

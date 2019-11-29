@@ -1,4 +1,5 @@
 @import "styling/color";
+@import "styling/hover";
 
 .header {
     z-index: 10000;
@@ -7,7 +8,8 @@
     width: 100vw;
     top: 0;
     left: 0;
-    > div {
+
+    >div {
         height: 6rem;
         display: flex;
         justify-content: space-between;
@@ -28,9 +30,53 @@
 
 .nav {
     position: inherit;
+    display: flex;
+    align-items: center;
+
+    .nav-bar {
+        overflow: hidden;
+        line-height: 1.7rem;
+        vertical-align: middle;
+        ul {
+            margin: 0;
+            padding: 0;
+            position: relative;
+            display: inline-block;
+            text-transform: capitalize;
+            transition: .8s;
+            transform: translate(10%, 0);
+        }
+
+        li {
+    
+            position: relative;
+            display: inline-block;
+            list-style-type: none;
+            vertical-align: middle;
+            margin-right: 3rem;
+
+    
+            @include hover-underline("a", "&");
+
+            a {
+                position: relative;
+                display: inline-block;
+                text-decoration: none;
+                &::after {
+                    bottom: 0;
+                }
+            }
+
+        
+        }
+    
+    }
+
     .nav-icon {
+        display: inline-block;
         height: 2.4rem;
         width: 2.4rem;
+        margin-left: 1rem;
 
         div {
             transition-duration: 1s;
@@ -57,7 +103,7 @@
 
     }
 
-    &:hover {
+    &.open {
         .nav-icon div {
             &:nth-child(1) {
                 transform: translate(0, 0) rotate(45deg);
@@ -71,25 +117,11 @@
                 transform: translate(0, 0) rotate(-45deg)
             }
         }
-    }
-}
 
-.nav-bar {
-    margin: 0;
-    padding: 0;
-    display: inline-block;
-    line-height: 2rem;
-    text-transform: capitalize;
-
-    li {
-        display: inline-block;
-        list-style-type: none;
-        vertical-align: middle;
-        margin-left: 3rem;
-
-        a {
-            text-decoration: none;
+        .nav-bar ul {
+            transform: translate(0, 0);
         }
     }
-
 }
+
+

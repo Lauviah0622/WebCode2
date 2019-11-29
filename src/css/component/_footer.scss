@@ -4,13 +4,21 @@
     background-color: $color-main;
     position: inherit;
 
-    > div {
+    >div {
         padding: 0.5rem 0;
         position: inherit;
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
 
+    }
+
+    li {
+        position: relative;
+        display: inline-block;
+        list-style-type: none;
+        vertical-align: middle;
+        margin-right: 3rem;
     }
 
     .logo {

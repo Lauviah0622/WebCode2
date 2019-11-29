@@ -1,10 +1,13 @@
+$gallery-gap: 1rem;
+
 .gallery {
     img {
         width: 100%;
         height: auto;
         display: block;
-        margin: 1rem 0;
+        margin-bottom: $gallery-gap;
     }
 
     @include sepration-line;
 }
+

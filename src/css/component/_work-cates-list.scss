@@ -1,4 +1,7 @@
 @import "styling/color";
+@import "styling/hover";
+@import "styling/hover";
+
 
 .cates-list {
     display: block;
@@ -23,21 +26,22 @@
             text-decoration: none;
         }
 
-        &::after {
-            padding-top: 0.3em;
-            content: "";
-            position: absolute;
-            display: block;
-            left: 0;
-            width: 0%;
-            border-bottom: solid 2px $color-orange;
-            transition-duration: 0.5s;
-        }
+        @include hover-underline("&");
+        // &::after {
+        //     padding-top: 0.3em;
+        //     content: "";
+        //     position: absolute;
+        //     display: block;
+        //     left: 0;
+        //     width: 0%;
+        //     border-bottom: solid 2px $color-orange;
+        //     transition-duration: 0.5s;
+        // }
 
-        &:hover::after {
-            width: 100%;
+        // &:hover::after {
+        //     width: 100%;
 
-        }
+        // }
     }
 }
 
