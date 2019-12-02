@@ -64,6 +64,17 @@ export function watch() {
     console.log("watching file ~")
 }
 
+export function ejs() {
+    return  gulp.src(['./src/ejs/**/*.ejs', './src/ejs/**/*.html'])
+      .pipe($.frontMatter())
+      .pipe(
+        $.layout((file) => {
+          return file.frontMatter;
+        }),
+      )
+      .pipe(gulp.dest('./dest/html'))
+  }
+
 
 exports.default = gulp.parallel(
     sass,
