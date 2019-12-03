@@ -1,5 +1,4 @@
-node_modules/
+node_modules/**
 asset/
 test/
-dest/
-!src/ejs/test
+dest/**
