@@ -2,40 +2,11 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:300,400,500&display=swap" rel="stylesheet">
-<title>projects</title>
-<link rel="stylesheet" href="./css/projects.css">
-
+    <%- include('component/_head', {current: current}); %>
 </head>
 
 <body>
-    <header class="header" id="header">
-        <div class="block-margin wide">
-            <div class="logo">
-                <a href="../index.html">
-                    <img src="./asset/logo.svg" alt="">
-                </a>
-            </div>
-            <nav class="nav open" id="nav">
-                <div class="nav-bar">
-                    <ul>
-                        <li class=""><a href="./">home</a></li>
-                        <li class="active"><a href="./projects.html">project</a></li>
-                        <li class=""><a href="./works.html">work</a></li>
-                        <li class=""><a href="./contact.html">contact</a></li>
-                    </ul>
-                </div>
-                <div class="nav-icon">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-            </nav>
-        </div>
-    </header>
+    <%- include("component/_nav", {page: page})%>
     <section class="page-title block-margin narrow ">
         <h1>Projects</h1>
     </section>
@@ -113,22 +84,7 @@
     <div class="works">
 
     </div>
-    <footer id="footer" class="footer">
-        <div class="block-margin wide">
-
-            <div class="logo">
-                <a href="">
-                    <img src="./asset/logo-white-full.svg" alt="">
-                </a>
-            </div>
-            <ul class="nav-bar footer-nav">
-                <li><a href="./">home</a></li>
-                <li><a href="./projects.html">project</a></li>
-                <li><a href="./works.html">work</a></li>
-                <li><a href="./contact.html">contact</a></li>
-            </ul>
-        </div>
-    </footer>
+    <%- include('component/_footer'); %>
 </body>
 
 </html>

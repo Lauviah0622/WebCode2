@@ -37,39 +37,61 @@
         overflow: hidden;
         line-height: 1.7rem;
         vertical-align: middle;
+
         ul {
-            margin: 0;
+            margin-left: 2rem;
             padding: 0;
             position: relative;
             display: inline-block;
             text-transform: capitalize;
             transition: .8s;
-            transform: translate(10%, 0);
+            transform: translate(110%, 0);
         }
 
         li {
-    
+
             position: relative;
             display: inline-block;
             list-style-type: none;
             vertical-align: middle;
             margin-right: 3rem;
 
-    
             @include hover-underline("a", "&");
+
+            &.active {
+                a::after {
+                    width: 100%;
+                }
+            
+                a::before {
+                    content: '';
+                    position: absolute;
+                    display: block;
+                    background-image: url(../asset/asterisk.svg);
+                    height: 10px;
+                    width: 10px;
+                    left: -1rem;
+                    top: 0.6rem;
+
+
+                }
+            }
 
             a {
                 position: relative;
                 display: inline-block;
                 text-decoration: none;
+
                 &::after {
                     bottom: 0;
                 }
+
+
             }
 
-        
+
         }
-    
+
     }
 
     .nav-icon {
@@ -119,9 +141,7 @@
         }
 
         .nav-bar ul {
-            transform: translate(0, 0);
+            transform: translate(0%, 0);
         }
     }
 }
-
-

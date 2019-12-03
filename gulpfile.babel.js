@@ -52,9 +52,19 @@ export function imgMinify () {
     .pipe(gulp.dest("./dest/asset"))
 }
 
+export function ejs() {
+    return  gulp.src(['./src/**/*.ejs', './src/**/*.html', "!./src/HTMLbackup/*"])
+      .pipe($.frontMatter())
+      .pipe(
+        $.layout((file) => {
+          return file.frontMatter;
+        }),
+      )
+      .pipe(gulp.dest('./dest'))
+  }
 
 export function watch() {
-    gulp.watch(["./src/**/*.html", "./src/**/*.ejs"], copyHTML)
+    gulp.watch(["./src/**/*.html", "!./src/HTMLbackup/*", "./src/**/*.ejs"], ejs)
     // gulp.watch(['./src/**/*.jade', './src/**/*.pug'], ['jade'])
     gulp.watch(
         ["./src/css/**/*.sass", "./src/css/**/*.scss"],
@@ -64,23 +74,12 @@ export function watch() {
     console.log("watching file ~")
 }
 
-export function ejs() {
-    return  gulp.src(['./src/**/*.ejs', './src/ejs/**/*.html'])
-      .pipe($.frontMatter())
-      .pipe(
-        $.layout((file) => {
-          return file.frontMatter;
-        }),
-      )
-      .pipe(gulp.dest('./dest/html'))
-  }
 
 
 exports.default = gulp.parallel(
-    ejs,
     sass,
+    ejs,
     browser,
-    copyHTML,
     watch,
   )
 

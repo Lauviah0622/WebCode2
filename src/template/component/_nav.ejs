@@ -8,10 +8,10 @@
             <nav class="nav open" id="nav">
                 <div class="nav-bar">
                     <ul>
-                        <li class="<% if (current === 'product') {%>active<%} %>"><a href="">home</a></li>
-                        <li><a href="./projects.html">project</a></li>
-                        <li><a href="./works.html">work</a></li>
-                        <li><a href="./contact.html">contact</a></li>
+                        <li class="<% if (page === 'home') {%>active<%} %>"><a href="./">home</a></li>
+                        <li class="<% if (page === 'project') {%>active<%} %>"><a href="./projects.html">project</a></li>
+                        <li class="<% if (page === 'work') {%>active<%} %>"><a href="./works.html">work</a></li>
+                        <li class="<% if (page === 'contact') {%>active<%} %>"><a href="./contact.html">contact</a></li>
                     </ul>
                 </div>
                 <div class="nav-icon">
