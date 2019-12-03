@@ -3,12 +3,12 @@ $layout-breakpoint-M: 768px;
 $layout-breakpoint-S: 480px;
 
 @mixin media-XL {
-    @media (min-width: $layout-breakpoint-L + 1) {
+    @media (min-width: $layout-breakpoint-L) {
         @content
     }
 };
 @mixin media-L {
-    @media (min-width: $layout-breakpoint-M + 1) and (max-width: $layout-breakpoint-L) {
+    @media (min-width: $layout-breakpoint-M + 1) {
         @content
     }
 };

@@ -15,22 +15,55 @@ body {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    
+
 }
 
-.header {
-    position: relative;
+@include media-L {
+
+    .nav,
+    .nav.open {
+        position: relative;
+        background-color: rgba(255, 255, 255, 0.9);
+
+        .nav-menu ul {
+            transform: translate(0%, 0%);
+            opacity: 1;
+    
+        }
+    
+        .nav-icon div {
+            &:nth-child(1) {
+                transform: translate(0, -0.7rem);
+            }
+    
+            &:nth-child(2) {
+                transform: translate(0, 0);
+            }
+    
+            &:nth-child(3) {
+                transform: translate(0, 0.7rem);
+    
+            }
+        }
+    }
+
 }
+
 
 .content {
     flex: 1 1 auto;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    padding-top: 1rem;
+    ;
+
+    // margin-top: 1rem;
+    // margin-bottom: 2rem;
     .map {
         width: 70%;
         height: 100%;
         padding-left: 2rem;
         float: left;
+
         div {
             height: 100%;
             width: 100%;
@@ -43,18 +76,19 @@ body {
         height: 100%;
         float: left;
         padding-left: 2rem;
-        > * {
-        }
-        
+
+        >* {}
+
         h1 {
             margin-top: 1rem;
             margin-bottom: 0;
         }
-        
+
         h3 {
             margin: 0;
             margin-top: 2rem;
             text-transform: capitalize;
+
             &::after {
                 content: "."
             }

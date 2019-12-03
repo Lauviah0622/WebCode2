@@ -4,11 +4,10 @@ import browserSync from "browser-sync";
 
 const $ = require('gulp-load-plugins')();
 
-
-export function copyHTML(cb) {
-    return gulp.src('./src/**/*.html')
-        .pipe(gulp.dest('./dest'))
-};
+export function js() {
+    return gulp.src('./src/js/*.js')
+    .pipe(gulp.dest('./dest/js'))
+}
 
 export function delTemp() {
     return del(['./test/*', '!./test/*.js']);
@@ -70,6 +69,7 @@ export function watch() {
         ["./src/css/**/*.sass", "./src/css/**/*.scss"],
         sass
     )
+    gulp.watch(['./src/js/*.js'], js)
     // gulp.watch("./src/javascripts/**/*.js")
     console.log("watching file ~")
 }
@@ -81,6 +81,7 @@ exports.default = gulp.parallel(
     ejs,
     browser,
     watch,
+    js
   )
 
 

@@ -19,10 +19,10 @@ html, body {
 
 html {
     @include media-S {
-        // font-size: 12px;
+        font-size: 12px;
     };
     @include media-M {
-        // font-size: 12px;
+        font-size: 14px;
     };
     @include media-L {};
 }
