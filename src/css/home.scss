@@ -36,7 +36,7 @@
         border-radius: 50%;
         border: 2px solid #ec6c1fff;
     }
-    
+
 
     svg {
         height: 80%;
@@ -51,7 +51,7 @@
         right: 50vw;
         transform: translate(65%, 0) rotate(180deg);
 
-        > div {
+        >div {
             border: 2px solid #ec6c1fff;
 
         }
@@ -106,14 +106,16 @@
     .more {
         text-align: right;
         width: 100%;
-        > * {
+
+        >* {
             display: inline-block;
         }
-        
+
         h3 {
             margin: 10px 0;
             @include hover-underline ("&");
-            &:hover ~ svg .arrow{
+
+            &:hover~svg .arrow {
                 stroke: $color-orange
             }
         }
@@ -121,10 +123,11 @@
         svg {
             width: 1rem;
             margin-left: .5rem;
+
             .arrow {
                 stroke: $color-main;
                 transition: .5s;
-                
+
             }
         }
     }
@@ -142,12 +145,16 @@
         margin-right: -5px;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 300px 300px 300px 300px;
+        // grid-template-rows: 300px 300px 300px 300px;
         grid-template-areas:
             "w2h1-1 w2h1-1 w1h2-2"
             "w1h1-3 w1h1-4 w1h2-2"
             "w1h1-5 w2h2-6 w2h2-6"
             "w1h1-7 w2h2-6 w2h2-6";
+
+        &::before {
+            padding-bottom: 100%;
+        }
 
         @mixin work-item-block($order, $gArea) {
             >figure:nth-child(#{$order}) {
@@ -191,7 +198,7 @@
                 display: inline-block;
                 height: 50px;
                 transform: rotate(180deg);
-                
+
                 .arrow {
                     transition: 0.5s;
                     stroke: white;

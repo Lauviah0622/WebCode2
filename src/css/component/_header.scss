@@ -1,5 +1,6 @@
 @import "styling/color";
 @import "styling/hover";
+@import "styling/layout";
 
 .header {
     z-index: 10000;
@@ -18,18 +19,35 @@
 
     .logo {
         display: inline-block;
-
         img {
             height: 4rem;
             width: 4rem;
         }
     }
 
+    @include media-M {
+        overflow: hidden;
+        height: 100vh;
+        
+        > div {
+            padding-top: 2rem;
+            align-items: flex-start;
 
+            
+
+        }
+
+        .logo {
+            img {
+                height: 4rem;
+                width: 4rem;
+            }
+        }
+    }
 }
 
 .nav {
-    position: inherit;
+    // position: inherit;
     display: flex;
     align-items: center;
 
@@ -144,4 +162,33 @@
             transform: translate(0%, 0);
         }
     }
+
+    @include media-M {
+        // display: block;
+
+        .nav-icon {
+            position: relative;
+            right: 0;
+            margin: 0;
+        }
+
+        .nav-bar {
+            @include abs-center;
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            li {
+                display: block;
+                margin: 0 0 2rem 0; 
+            }
+        }
+        
+    }
 }
+
+
+

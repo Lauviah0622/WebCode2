@@ -1,44 +1,70 @@
-$layout-breakpoint-XL: 1280px;
-$layout-breakpoint-L: 1024px;
+$layout-breakpoint-L: 1280px;
 $layout-breakpoint-M: 768px;
-$layout-breakpoint-S: 320px;
+$layout-breakpoint-S: 480px;
+
+@mixin media-XL {
+    @media (min-width: $layout-breakpoint-L + 1) {
+        @content
+    }
+};
+@mixin media-L {
+    @media (min-width: $layout-breakpoint-M + 1) and (max-width: $layout-breakpoint-L) {
+        @content
+    }
+};
+@mixin media-M {
+    @media (max-width: $layout-breakpoint-M) {
+        @content
+    }
+};
+@mixin media-S {
+    @media (max-width: $layout-breakpoint-S) {
+        @content
+    }
+};
+
 
 .block-margin {
-    @media (min-width: $layout-breakpoint-XL + 1) {
+
+    @include media-XL {
         &.wide {
             max-width: 1920px;
             width: 80vw;
-            min-width: 1100px;
+            min-width: 924px;
         }
 
         &.narrow {
-            width: 900px;
+            width: 800px;
+
         }
 
         margin: 0 auto;
-    }
+    };
 
-    @media (min-width: $layout-breakpoint-M + 1) and (max-width: $layout-breakpoint-XL) {
-        &.wide {
-            width: 85vw;
-            min-width: 668px;
-        }
-
-        &.narrow {
-            width: 896px;
-        }
-
-        margin: 0 auto;
-    }
 
     @media (min-width: $layout-breakpoint-M + 1) and (max-width: $layout-breakpoint-L) {
+        
+        &.wide {
+            margin: 0 50px;
+            
+        }
+        
+        &.narrow {
+            max-width: 1024px;
+            width: 70vw;
+            margin: 0 auto;
+
+        }
+
+    }
+
+    @media (min-width: $layout-breakpoint-S + 1) and (max-width: $layout-breakpoint-M) {
         margin: 0 50px;
     }
 
-    @media (min-width: $layout-breakpoint-S) and (max-width: $layout-breakpoint-M) {
-        margin: 0 28px;
+    @media (max-width: $layout-breakpoint-S) {
+        margin: 0 25px;
     }
-
 }
 
 .main-section-margin {
