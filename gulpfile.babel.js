@@ -65,7 +65,7 @@ export function watch() {
 }
 
 export function ejs() {
-    return  gulp.src(['./src/ejs/**/*.ejs', './src/ejs/**/*.html'])
+    return  gulp.src(['./src/**/*.ejs', './src/ejs/**/*.html'])
       .pipe($.frontMatter())
       .pipe(
         $.layout((file) => {
@@ -77,6 +77,7 @@ export function ejs() {
 
 
 exports.default = gulp.parallel(
+    ejs,
     sass,
     browser,
     copyHTML,

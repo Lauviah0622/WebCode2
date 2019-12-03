@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <%- include('_head', {current: current}); %>
+    <%- include('component/_head', {current: current}); %>
 </head>
 
 <body class="<%= current%>" id="<%= current%>">
@@ -23,7 +23,7 @@
         </div>
     </div>
 
-    <%- include("_nav", {current: current})%>
+    <%- include("component/_nav", {current: current})%>
     <section class="visual">
         <div id="visual-wrapper" class="visual-wrapper">
             <svg class="visual-border loading-stroke" viewBox="0 0 256 256">
