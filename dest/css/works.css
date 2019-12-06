@@ -467,9 +467,12 @@ a {
                 justify-content: center;
         -webkit-box-align: center;
                 align-items: center; } }
-  @media (max-width: 480px) {
-    .footer ul {
-      padding: 1.5rem; } }
+  .footer ul {
+    margin-left: auto; }
+    @media (max-width: 480px) {
+      .footer ul {
+        padding: 1.5rem;
+        margin: 0; } }
   .footer li {
     position: relative;
     display: inline-block;
@@ -480,11 +483,18 @@ a {
     @media (max-width: 480px) {
       .footer li {
         display: block;
-        margin: 1.5rem 0;
-        margin-right: 0; } }
+        padding: 1rem 0;
+        margin: 0; } }
   .footer .copyright {
     font-weight: 200;
     font-size: 0.5rem; }
+    @media (min-width: 769px) {
+      .footer .copyright {
+        margin-bottom: 6px; } }
+    @media (max-width: 480px) {
+      .footer .copyright {
+        -webkit-box-ordinal-group: 2;
+                order: 1; } }
   .footer .logo {
     display: inline-block; }
     .footer .logo img {
@@ -817,6 +827,37 @@ a {
       .projects .project-content .title * {
         margin: 0; }
 
+@media (min-width: 1280px) {
+  .block-margin {
+    margin: 0 auto; }
+    .block-margin.wide {
+      max-width: 1920px;
+      width: 80vw;
+      min-width: 924px; }
+    .block-margin.narrow {
+      width: 800px; } }
+
+@media (min-width: 769px) and (max-width: 1280px) {
+  .block-margin.wide {
+    margin: 0 50px; }
+  .block-margin.narrow {
+    max-width: 1024px;
+    width: 70vw;
+    margin: 0 auto; } }
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .block-margin {
+    margin: 0 50px; } }
+
+@media (max-width: 480px) {
+  .block-margin {
+    margin: 0 25px; }
+    .block-margin.s-fullwidth {
+      margin: 0 0; } }
+
+.main-section-margin {
+  margin-bottom: 5rem; }
+
 .page-title {
   position: relative; }
   .page-title h1 {
@@ -836,6 +877,10 @@ a {
       height: 0.5em;
       width: 0.5em;
       margin: 5px; }
+  @media (max-width: 480px) {
+    .page-title h1 {
+      line-height: 3rem;
+      text-align: left; } }
 
 .filter > .filter-masking {
   -webkit-filter: grayscale(100%);

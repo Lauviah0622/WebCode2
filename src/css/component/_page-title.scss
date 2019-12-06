@@ -1,3 +1,5 @@
+@import 'styling/layout';
+
 .page-title {
     position: relative;
     h1 {
@@ -17,6 +19,13 @@
             height: 0.5em;
             width: 0.5em;
             margin: 5px;
+        }
+    }
+
+    @include media-S {
+        h1 {
+            line-height: 3rem;
+            text-align: left;
         }
     }
 }

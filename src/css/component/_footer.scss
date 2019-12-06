@@ -29,8 +29,11 @@
     }
 
     ul {
+        margin-left: auto; 
         @include media-S {
             padding: 1.5rem;
+            margin: 0;
+            
         }
     }
 
@@ -44,14 +47,20 @@
 
         @include media-S {
             display: block;
-            margin: 1.5rem 0 ;
-            margin-right: 0;
+            padding: 1rem 0 ;
+            margin: 0;
         }
     }
 
     .copyright {
         font-weight: 200;
         font-size: 0.5rem;
+        @include media-L {
+            margin-bottom: 6px;
+        }
+        @include media-S {
+            order: 1;
+        }
     }
 
     .logo {
