@@ -1,7 +1,17 @@
 @import "styling/layout";
 
 @mixin work-gallery-item {
-    margin: 5px;
+    $item-margin: 5px;
+    margin: $item-margin;
+
+    @include media-S {
+        width: calc(50% - #{$item-margin * 2});
+        &::after {
+        }
+        > div {
+            display: flex;
+        }
+    }
 
     >div {
         height: 100%;
@@ -17,17 +27,34 @@
             * {
                 color: white;
             }
+
+            @include media-S {
+                position: relative;
+            }
+
         }
 
         img {
             z-index: 0;
-            // position: absolute;
+            position: absolute;
             height: 100%;
             width: 100%;
             object-fit: cover;
             object-position: 50% 50%;
+            &::after {
+                content: '';
+                display: block;
+                padding-bottom: 100%;
+
+            }
+
+            @include media-S {
+                position: relative;
+            }
+
         }
     }
+
 }
 
 ;

@@ -9,11 +9,13 @@
     white-space: nowrap;
 }
 
-html,
+html {
+    // width: 100%;
+}
 body {
     margin: 0;
     padding: 0;
-    width: 100vw;
+    min-width: 100vw;
     overflow: auto;
     overflow-x: hidden;
 }
@@ -21,15 +23,11 @@ body {
 html {
     @include media-S {
         font-size: 12px;
-    }
-
-    ;
+    };
 
     @include media-M {
         font-size: 14px;
-    }
-
-    ;
+    };
 
     @include media-L {}
 
@@ -71,6 +69,60 @@ a {
         width: 90%;
         height: 2px;
         background-color: $color-main;
-        margin: 20px 5%;
+        margin: 20px auto;
+
+        @include media-S {
+            
+            width: 20rem;
+        }
+    }
+}
+
+.block-margin {
+
+    @include media-XL {
+        &.wide {
+            max-width: 1920px;
+            width: 80vw;
+            min-width: 924px;
+        }
+
+        &.narrow {
+            width: 800px;
+
+        }
+
+        margin: 0 auto;
+    };
+
+
+    @media (min-width: $layout-breakpoint-M + 1) and (max-width: $layout-breakpoint-L) {
+        
+        &.wide {    
+            margin: 0 50px;
+                    
+        }
+        
+        &.narrow {
+            max-width: 1024px;
+            width: 70vw;
+            margin: 0 auto;
+
+        }
+
+    }
+
+    @media (min-width: $layout-breakpoint-S + 1) and (max-width: $layout-breakpoint-M) {
+        margin: 0 50px;
+    }
+
+    @media (max-width: $layout-breakpoint-S) {
+        margin: 0 25px;
+
+        &.s-fullwidth {
+            margin: 0 0;
+
+        }
+
     }
 }

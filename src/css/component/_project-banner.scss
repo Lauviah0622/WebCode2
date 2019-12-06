@@ -16,7 +16,7 @@
         width: 100%;   
        
         @include media-S{
-                height: 200px;
+                // height: 200px;
 
                 img {
                 object-fit: cover;
@@ -63,6 +63,26 @@
             }
         }
 
+        @include media-S {
+            margin: 0 0.7rem 0rem 0.7rem;
+            padding: 1.5rem 0.5rem;
+            padding-top: 0.5rem;
+
+            .brand {
+                margin-bottom: 2px;
+            }   
+
+            .line {
+                display: none;
+            }
+
+            .title {
+                padding: 0;
+                margin-left: 1rem;
+            }
+
+
+        }
 
     }
 }

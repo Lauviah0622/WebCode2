@@ -13,13 +13,17 @@
     </section>
     <section class="cates-list block-margin narrow">
         <ul>
-            <li><a href="./categories.html"><span>主視覺</span>‧<span>KeyVisual</span></a></li>
-            <li><a href="./categories.html"><span>購買點展示設計‧POSM</span></a></li>
-            <li><a href="./categories.html"><span>包裝設計‧Package</span></a></li>
+            <li><a href="./categories.html"><span class="cate-ch">主視覺</span><span class="cate-en">KeyVisual</span></a>
+            </li>
+            <li><a href="./categories.html"><span class="cate-ch">購買點展示設計</span><span class="cate-en">POSM</span></a>
+            </li>
+            <li><a href="./categories.html"><span class="cate-ch">包裝設計</span><span class="cate-en">Package</span></a>
+            </li>
         </ul>
     </section>
     <section class="works block-margin wide main-section-margin">
         <div class="container">
+            <% for(var i = 0; i< 10; i++) { %>
             <figure class="item">
                 <div class="filter">
                     <div class="title fade-in">
@@ -27,59 +31,11 @@
                         <p><span>豪華大禮包</span><span>包裝設計</span></p>
                     </div>
                     <img src="./asset/img/works/CNY禮盒/首頁_小專案_CNY禮盒-A.jpg" class="filter-masking">
+                    <div class="div">123123</div>
                 </div>
             </figure>
-            <figure class="item">
-                <div class="filter">
-                    <img src="./asset/img/works/CNY禮盒/首頁_小專案_CNY禮盒-A.jpg" class="filter-masking">
-                </div>
-            </figure>
-            <figure class="item">
-                <div class="filter">
-                    <img src="./asset/img/works/CNY禮盒/首頁_小專案_CNY禮盒-A.jpg" class="filter-masking">
-                </div>
-            </figure>
-            <figure class="item">
-                <div class="filter">
-                    <img src="./asset/img/works/CNY禮盒/首頁_小專案_CNY禮盒-A.jpg" class="filter-masking">
-                </div>
-            </figure>
-            <figure class="item">
-                <div class="filter">
-                    <img src="./asset/img/works/CNY禮盒/首頁_小專案_CNY禮盒-A.jpg" class="filter-masking">
-                </div>
-            </figure>
-            <figure class="item">
-                <div class="filter">
-                    <img src="./asset/img/works/CNY禮盒/首頁_小專案_CNY禮盒-A.jpg" class="filter-masking">
-                </div>
-            </figure>
-            <figure class="item">
-                <div class="filter">
-                    <img src="./asset/img/works/CNY禮盒/首頁_小專案_CNY禮盒-A.jpg" class="filter-masking">
-                </div>
-            </figure>
-            <figure class="item">
-                <div class="filter">
+            <% } %>
 
-                    <img src="./asset/img/works/CNY禮盒/首頁_小專案_CNY禮盒-A.jpg" class="filter-masking">
-                </div>
-            </figure>
-            <figure class="item">
-                <div class="filter">
-                    <img src="./asset/img/works/CNY禮盒/首頁_小專案_CNY禮盒-A.jpg" class="filter-masking">
-                </div>
-            </figure>
-            <figure class="item">
-                <div class="filter">
-                    <img src="./asset/img/works/CNY禮盒/首頁_小專案_CNY禮盒-A.jpg" class="filter-masking">
-                </div>
-            </figure>
-            <figure class="item">
-                <div class="filter">
-                    <img src="./asset/img/works/CNY禮盒/首頁_小專案_CNY禮盒-A.jpg" class="filter-masking">
-                </div>
-            </figure>
         </div>
     </section>
     <%- include('component/_footer'); %>

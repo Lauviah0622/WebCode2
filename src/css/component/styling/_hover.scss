@@ -1,9 +1,15 @@
 @import "color";
+@import "layout";
 
 
 .filter>.filter-masking {
     filter: grayscale(100%);
     transition: 0.5s;
+    
+    @include media-S {
+        filter: grayscale(0%);
+        
+    }
 }
 
 .filter::after {
@@ -40,6 +46,18 @@
     }
 }
 
+.filter,
+.fade-in,
+.filter-masking,
+{
+    @include media-M {
+        &::after {
+            display: none;
+        }
+        filter: none;
+    }
+}
+
 @mixin hover-style {
     content: "";
     position: absolute;
@@ -52,7 +70,9 @@
     width: 100%;
 
 
-};
+}
+
+;
 
 @mixin hover-underline ($target, $handler: null) {
     #{$target}::after {

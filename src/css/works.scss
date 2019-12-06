@@ -42,11 +42,9 @@
     }
 
     .item {
-        background-color: rgb(226, 114, 114);
+
+        // background-color: rgb(226, 114, 114);
         @include work-gallery-item;
-        > div img{
-            position: absolute;
-        }
 
         @mixin item-block($order, $gStart, $gEnd) {
             &:nth-child(6n + #{$order}) {
@@ -65,9 +63,22 @@
 
     }
 
-
     h1 {
         display: inline-block;
     }
+
+    @include media-S {
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            &::before {
+                display: none;
+            }
+
+            margin: 0;
+        }        
+        
+    }
+
 
 }

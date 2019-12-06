@@ -14,3 +14,10 @@
 
 // hover-effect
 @import "component/styling/hover";
+
+@include media-S {
+    .project__item {
+        margin: 0;
+    }
+    
+}
