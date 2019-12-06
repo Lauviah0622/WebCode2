@@ -1,4 +1,5 @@
 // @import "../normalize";
+@import "./styling/layout";
 
 
 .projects {
@@ -14,6 +15,14 @@
         height: auto; 
         width: 100%;   
        
+        @include media-S{
+                height: 200px;
+
+                img {
+                object-fit: cover;
+                }
+        }   
+
         img {
             width: 100%;
             height: 100%;

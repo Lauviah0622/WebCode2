@@ -44,9 +44,9 @@ $layout-breakpoint-S: 480px;
 
     @media (min-width: $layout-breakpoint-M + 1) and (max-width: $layout-breakpoint-L) {
         
-        &.wide {
+        &.wide {    
             margin: 0 50px;
-            
+                    
         }
         
         &.narrow {
@@ -64,6 +64,12 @@ $layout-breakpoint-S: 480px;
 
     @media (max-width: $layout-breakpoint-S) {
         margin: 0 25px;
+
+        &.s-fullwidth {
+            margin: 0 0;
+
+        }
+
     }
 }
 

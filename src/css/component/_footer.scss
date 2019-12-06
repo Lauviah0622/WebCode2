@@ -1,8 +1,13 @@
 @import 'styling/color';
+@import 'styling/layout';
 
 .footer {
     background-color: $color-main;
     position: inherit;
+    * {
+        color: white;
+    }
+    
 
     >div {
         padding: 0.5rem 0;
@@ -11,6 +16,22 @@
         justify-content: space-between;
         align-items: flex-end;
 
+
+        @include media-S 
+        {
+            padding: 2rem 0;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+    }
+
+    ul {
+        @include media-S {
+            padding: 1.5rem;
+        }
     }
 
     li {
@@ -20,6 +41,17 @@
         vertical-align: middle;
         margin-right: 3rem;
         text-transform: capitalize;
+
+        @include media-S {
+            display: block;
+            margin: 1.5rem 0 ;
+            margin-right: 0;
+        }
+    }
+
+    .copyright {
+        font-weight: 200;
+        font-size: 0.5rem;
     }
 
     .logo {
@@ -30,9 +62,7 @@
         }
     }
 
-    .footer-nav {
-        & * {
-            color: white;
-        }
-    }
+   
 }
+
+
