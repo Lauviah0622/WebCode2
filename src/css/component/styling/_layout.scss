@@ -1,48 +1,37 @@
-$layout-breakpoint-XL: 1280px;
-$layout-breakpoint-L: 1024px;
+$layout-breakpoint-L: 1280px;
 $layout-breakpoint-M: 768px;
-$layout-breakpoint-S: 320px;
+$layout-breakpoint-S: 480px;
 
-.block-margin {
-    @media (min-width: $layout-breakpoint-XL + 1) {
-        &.wide {
-            max-width: 1920px;
-            width: 80vw;
-            min-width: 1100px;
-        }
-
-        &.narrow {
-            width: 900px;
-        }
-
-        margin: 0 auto;
+@mixin media-XL {
+    @media (min-width: $layout-breakpoint-L) {
+        @content
     }
-
-    @media (min-width: $layout-breakpoint-M + 1) and (max-width: $layout-breakpoint-XL) {
-        &.wide {
-            width: 85vw;
-            min-width: 668px;
-        }
-
-        &.narrow {
-            width: 896px;
-        }
-
-        margin: 0 auto;
+};
+@mixin media-L {
+    @media (min-width: $layout-breakpoint-M + 1) {
+        @content
     }
-
-    @media (min-width: $layout-breakpoint-M + 1) and (max-width: $layout-breakpoint-L) {
-        margin: 0 50px;
+};
+@mixin media-M {
+    @media (max-width: $layout-breakpoint-M) {
+        @content
     }
-
-    @media (min-width: $layout-breakpoint-S) and (max-width: $layout-breakpoint-M) {
-        margin: 0 28px;
+};
+@mixin media-S {
+    @media (max-width: $layout-breakpoint-S) {
+        @content
     }
+};
 
-}
+z
+
 
 .main-section-margin {
     margin-bottom: 5rem;
+
+    @include media-S {
+        margin-bottom: 2rem;
+    }
 }
 
 

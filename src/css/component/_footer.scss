@@ -1,8 +1,14 @@
 @import 'styling/color';
+@import 'styling/layout';
 
 .footer {
     background-color: $color-main;
     position: inherit;
+
+    * {
+        color: white;
+    }
+
 
     >div {
         padding: 0.5rem 0;
@@ -11,6 +17,26 @@
         justify-content: space-between;
         align-items: flex-end;
 
+
+        @include media-M {
+            padding: 2rem 0;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+    }
+
+    ul {
+        margin-left: auto;
+        padding-left: 0;
+
+        @include media-M {
+            padding: 1.5rem;
+            margin: 0;
+
+        }
     }
 
     li {
@@ -19,6 +45,36 @@
         list-style-type: none;
         vertical-align: middle;
         margin-right: 3rem;
+        text-transform: capitalize;
+
+        &:nth-last-child(1) {
+            margin-right: 0;
+        }
+
+        @include media-M {
+            padding: 1rem 0;
+        }
+
+        @include media-S {
+            display: block;
+            padding: 1rem 0;
+            margin: 0;
+
+        }
+
+
+    }
+
+    .copyright {
+        font-weight: 200;
+        font-size: 0.5rem;
+        margin: 0;
+        padding-left: 1rem;
+        margin-bottom: 6px;
+
+        @include media-M {
+            order: 1;
+        }
     }
 
     .logo {
@@ -26,12 +82,12 @@
 
         img {
             height: 4rem;
+
+            @include media-M {
+                height: 3rem;
+            }
         }
     }
 
-    .footer-nav {
-        & * {
-            color: white;
-        }
-    }
+
 }

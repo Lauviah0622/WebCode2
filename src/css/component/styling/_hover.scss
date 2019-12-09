@@ -1,9 +1,15 @@
 @import "color";
+@import "layout";
 
 
 .filter>.filter-masking {
     filter: grayscale(100%);
     transition: 0.5s;
+    
+    @include media-S {
+        filter: grayscale(0%);
+        
+    }
 }
 
 .filter::after {
@@ -40,17 +46,38 @@
     }
 }
 
+.filter,
+.fade-in,
+.filter-masking,
+{
+    @include media-M {
+        &::after {
+            display: none;
+        }
+        filter: none;
+    }
+}
+
+@mixin hover-style {
+    content: "";
+    position: absolute;
+    display: block;
+    left: 0;
+    bottom: -0.4rem;
+    width: 0%;
+    border-bottom: solid 2px $color-orange;
+    transition-duration: 0.5s;
+    width: 100%;
+
+
+}
+
+;
+
 @mixin hover-underline ($target, $handler: null) {
     #{$target}::after {
-        content: "";
-        // padding-top: 0.3em;
-        position: absolute;
-        display: block;
-        left: 0;
-        bottom: -0.4rem;
+        @include hover-style;
         width: 0%;
-        border-bottom: solid 2px $color-orange;
-        transition-duration: 0.5s;
     }
 
     @if $handler {
@@ -58,7 +85,9 @@
             width: 100%;
 
         }
-    } @else {
+    }
+
+    @else {
         #{$target}:hover::after {
             width: 100%;
 

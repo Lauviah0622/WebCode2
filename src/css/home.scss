@@ -20,8 +20,8 @@
 }
 
 .top-btn {
-    right: 100px;
-    bottom: 100px;
+    right: 10vw;
+    bottom: 10vh;
     position: fixed;
     height: 50px;
     width: 50px;
@@ -36,7 +36,7 @@
         border-radius: 50%;
         border: 2px solid #ec6c1fff;
     }
-    
+
 
     svg {
         height: 80%;
@@ -51,7 +51,7 @@
         right: 50vw;
         transform: translate(65%, 0) rotate(180deg);
 
-        > div {
+        >div {
             border: 2px solid #ec6c1fff;
 
         }
@@ -71,6 +71,7 @@
         top: 40%;
         left: 50%;
         transform: translate(-50%, -50%);
+        overflow: hidden;
 
         >* {
             position: absolute;
@@ -98,6 +99,16 @@
 .projects {
     @include sepration-line;
 
+    @include media-S {
+        margin: 0;
+        &::after {
+            // width: 90%;
+            // margin: 25px + 5vw;
+        } 
+    }
+
+    
+
     .filter:hover>img {
         filter: grayscale(0%);
 
@@ -106,25 +117,41 @@
     .more {
         text-align: right;
         width: 100%;
-        > * {
+
+
+        >* {
             display: inline-block;
         }
-        
+
         h3 {
-            margin: 10px 0;
+            margin: 1rem 0;
             @include hover-underline ("&");
-            &:hover ~ svg .arrow{
+
+            &:hover~svg .arrow {
                 stroke: $color-orange
             }
         }
 
         svg {
             width: 1rem;
-            margin-left: .5rem;
+            margin-left: .4rem;
+
             .arrow {
                 stroke: $color-main;
                 transition: .5s;
-                
+
+            }
+        }
+
+        @include media-S {
+            text-align: center;
+
+            svg .arrow {
+                stroke: $color-orange
+            }
+
+            h3::after {
+                @include hover-style;
             }
         }
     }
@@ -142,12 +169,32 @@
         margin-right: -5px;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 300px 300px 300px 300px;
-        grid-template-areas:
-            "w2h1-1 w2h1-1 w1h2-2"
-            "w1h1-3 w1h1-4 w1h2-2"
-            "w1h1-5 w2h2-6 w2h2-6"
-            "w1h1-7 w2h2-6 w2h2-6";
+
+
+
+        @include media-L {
+            grid-template-rows: repeat(4, calc(70vw / 3));
+
+        }
+
+        @include media-M {
+            grid-template-rows: repeat(4, calc(33vw - 33px));
+
+        }
+
+        @include media-XL {
+            grid-template-rows: repeat(4, calc(800px / 3));
+
+        }
+
+        grid-template-areas: "w2h1-1 w2h1-1 w1h2-2"
+        "w1h1-3 w1h1-4 w1h2-2"
+        "w1h1-5 w2h2-6 w2h2-6"
+        "w1h1-7 w2h2-6 w2h2-6";
+
+        &::before {
+            padding-bottom: 100%;
+        }
 
         @mixin work-item-block($order, $gArea) {
             >figure:nth-child(#{$order}) {
@@ -191,7 +238,7 @@
                 display: inline-block;
                 height: 50px;
                 transform: rotate(180deg);
-                
+
                 .arrow {
                     transition: 0.5s;
                     stroke: white;
@@ -200,6 +247,27 @@
         }
     }
 
+    @include media-S {
+        .work-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .work__item {
+            &:nth-child(1) {
+                width: 33%;
+
+                &::after {
+                    content: ''
+                }
+            }
+
+            &:nth-child(2) {
+                width: 66%;
+            }
+        }
+
+    }
 }
 
 .brands {
@@ -226,6 +294,23 @@
         >img {
             height: 100%;
             width: 100%;
+            filter: grayscale(1) brightness(350%);
+
+
+            &::after {
+                content: "";
+                display: block;
+
+
+            }
         }
+    }
+
+    @include media-S {
+        >div {
+            flex-direction: column;
+            padding: 0 30%;
+        }
+
     }
 }
