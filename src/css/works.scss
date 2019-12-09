@@ -26,6 +26,18 @@
         grid-template-columns: repeat(4, 1fr);
         grid-auto-rows: 1fr;
         margin: 5px -5px 5rem 5px;
+        gap: 5px;
+        @include media-L {
+            grid-template-rows: repeat(4, calc(70vw / 3));
+        }
+
+        @include media-M {
+            grid-template-rows: repeat(4, calc(33vw - 33px));
+        }
+
+        @include media-XL {
+            grid-template-rows: repeat(4, calc(800px / 3));
+        }
 
         &::before {
             content: '';
@@ -42,9 +54,9 @@
     }
 
     .item {
-
+        position: relative;
+        margin: 0;
         // background-color: rgb(226, 114, 114);
-        @include work-gallery-item;
 
         @mixin item-block($order, $gStart, $gEnd) {
             &:nth-child(6n + #{$order}) {
@@ -60,6 +72,11 @@
         @include item-block(4, 1, 2);
         @include item-block(5, 2, 3);
         @include item-block(6, 3, 5);
+
+    }
+
+    .work__item {
+        @include work-gallery-item;
 
     }
 

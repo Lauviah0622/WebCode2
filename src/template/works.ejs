@@ -25,14 +25,7 @@
         <div class="container">
             <% for(var i = 0; i< 10; i++) { %>
             <figure class="item">
-                <div class="filter">
-                    <div class="title fade-in">
-                        <h2>格蘭菲迪</h2>
-                        <p><span>豪華大禮包</span><span>包裝設計</span></p>
-                    </div>
-                    <img src="./asset/img/works/CNY禮盒/首頁_小專案_CNY禮盒-A.jpg" class="filter-masking">
-                    <div class="div">123123</div>
-                </div>
+                <%- include('component/_work-item', {workItem: workItem}) %>
             </figure>
             <% } %>
 

@@ -101,13 +101,14 @@
 
     @include media-S {
         margin: 0;
+
         &::after {
             // width: 90%;
             // margin: 25px + 5vw;
-        } 
+        }
     }
 
-    
+
 
     .filter:hover>img {
         filter: grayscale(0%);
@@ -165,26 +166,20 @@
 
     .work-container {
         // width: 100%;
-        margin-left: -5px;
-        margin-right: -5px;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-
-
+        gap: 5px;
 
         @include media-L {
             grid-template-rows: repeat(4, calc(70vw / 3));
-
         }
 
         @include media-M {
             grid-template-rows: repeat(4, calc(33vw - 33px));
-
         }
 
         @include media-XL {
             grid-template-rows: repeat(4, calc(800px / 3));
-
         }
 
         grid-template-areas: "w2h1-1 w2h1-1 w1h2-2"
@@ -192,9 +187,6 @@
         "w1h1-5 w2h2-6 w2h2-6"
         "w1h1-7 w2h2-6 w2h2-6";
 
-        &::before {
-            padding-bottom: 100%;
-        }
 
         @mixin work-item-block($order, $gArea) {
             >figure:nth-child(#{$order}) {
@@ -212,8 +204,11 @@
 
     }
 
-    .work__item {
+    figure {
+        margin: 0;
+    }
 
+    .work__item {
         @include work-gallery-item;
 
         .title h3 {
@@ -221,8 +216,25 @@
         }
 
         &.more {
+            >div {
+                width: 100%;
+                height: 100%;
+            }
+
+            h3 {
+                color: $color-main;
+                transition-duration: 0.5s;
+            }
+
+            .filter:after {
+                z-index: -1;
+            }
 
             .filter:hover {
+                h3 {
+                    color: white;
+                }
+
                 &::after {
                     opacity: 1;
                     background-color: $color-darkGrey;
@@ -235,7 +247,7 @@
             }
 
             .more-btn {
-                display: inline-block;
+                pointer-events: none;
                 height: 50px;
                 transform: rotate(180deg);
 

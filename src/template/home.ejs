@@ -61,7 +61,7 @@
         </div>
         <% } %>
 
-      
+
         <div class="more">
             <h3>More Projects</h3>
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100">
@@ -74,59 +74,26 @@
     </section>
     <section class="works block-margin narrow">
         <div class="work-container">
-            <figure class="work__item w2h1-1">
-                <div class="filter">
-                    <div class="title fade-in">
-                        <h2>格蘭菲迪</h2>
-                        <p><span>豪華大禮包</span><span>包裝設計</span></p>
-                    </div>
-                    <img src="./asset/img/works/CNY禮盒/首頁_小專案_CNY禮盒-A.jpg" class="filter-masking">
-                </div>
+            <% for (var i = 0; i< 4; i++) {%>
+
+            <% } %>
+            <figure class="w2h1-1">
+                <%- include('component/_work-item', {workItem: workItem}) %>
             </figure>
             <figure class="work__item w1h2-2">
-                <div class="filter">
-                    <div class="title fade-in">
-                        <h2>格蘭菲迪</h2>
-                        <p><span>豪華大禮包</span><span>包裝設計</span></p>
-                    </div>
-                    <img src="./asset/img/works/CNY禮盒/首頁_小專案_CNY禮盒-A.jpg" class="filter-masking">
-                </div>
+                <%- include('component/_work-item', {workItem: workItem}) %>
             </figure>
             <figure class="work__item w1h1-3">
-                <div class="filter">
-                    <div class="title fade-in">
-                        <h2>格蘭菲迪</h2>
-                        <p><span>豪華大禮包</span><span>包裝設計</span></p>
-                    </div>
-                    <img src="./asset/img/works/CNY禮盒/首頁_小專案_CNY禮盒-A.jpg" class="filter-masking">
-                </div>
+                <%- include('component/_work-item', {workItem: workItem}) %>
             </figure>
             <figure class="work__item w1h1-4">
-                <div class="filter">
-                    <div class="title fade-in">
-                        <h2>格蘭菲迪</h2>
-                        <p><span>豪華大禮包</span><span>包裝設計</span></p>
-                    </div>
-                    <img src="./asset/img/works/CNY禮盒/首頁_小專案_CNY禮盒-A.jpg" class="filter-masking">
-                </div>
+                <%- include('component/_work-item', {workItem: workItem}) %>
             </figure>
             <figure class="work__item w1h1-5">
-                <div class="filter">
-                    <div class="title fade-in">
-                        <h2>格蘭菲迪</h2>
-                        <p><span>豪華大禮包</span><span>包裝設計</span></p>
-                    </div>
-                    <img src="./asset/img/works/CNY禮盒/首頁_小專案_CNY禮盒-A.jpg" class="filter-masking">
-                </div>
+                <%- include('component/_work-item', {workItem: workItem}) %>
             </figure>
             <figure class="work__item w2h2-6">
-                <div class="filter">
-                    <div class="title fade-in">
-                        <h2>格蘭菲迪</h2>
-                        <p><span>豪華大禮包</span><span>包裝設計</span></p>
-                    </div>
-                    <img src="./asset/img/works/CNY禮盒/首頁_小專案_CNY禮盒-A.jpg" class="filter-masking">
-                </div>
+                <%- include('component/_work-item', {workItem: workItem}) %>
             </figure>
             <figure class="work__item w1h1-7 more">
                 <div class="filter">

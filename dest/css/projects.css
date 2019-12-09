@@ -305,12 +305,10 @@ template {
 [hidden] {
   display: none; }
 
-z
 .main-section-margin {
   margin-bottom: 5rem; }
   @media (max-width: 480px) {
-    z
-.main-section-margin {
+    .main-section-margin {
       margin-bottom: 2rem; } }
 
 * {
@@ -385,20 +383,16 @@ a {
     .block-margin.s-fullwidth {
       margin: 0 0; } }
 
-z
 .main-section-margin {
   margin-bottom: 5rem; }
   @media (max-width: 480px) {
-    z
-.main-section-margin {
+    .main-section-margin {
       margin-bottom: 2rem; } }
 
-z
 .main-section-margin {
   margin-bottom: 5rem; }
   @media (max-width: 480px) {
-    z
-.main-section-margin {
+    .main-section-margin {
       margin-bottom: 2rem; } }
 
 .footer {
@@ -467,12 +461,10 @@ z
         .footer .logo img {
           height: 3rem; } }
 
-z
 .main-section-margin {
   margin-bottom: 5rem; }
   @media (max-width: 480px) {
-    z
-.main-section-margin {
+    .main-section-margin {
       margin-bottom: 2rem; } }
 
 .filter > .filter-masking {
@@ -525,12 +517,10 @@ z
     .filter-masking::after {
       display: none; } }
 
-z
 .main-section-margin {
   margin-bottom: 5rem; }
   @media (max-width: 480px) {
-    z
-.main-section-margin {
+    .main-section-margin {
       margin-bottom: 2rem; } }
 
 .nav {
@@ -685,12 +675,10 @@ z
       -webkit-transform: translate(0, 0.7rem);
               transform: translate(0, 0.7rem); }
 
-z
 .main-section-margin {
   margin-bottom: 5rem; }
   @media (max-width: 480px) {
-    z
-.main-section-margin {
+    .main-section-margin {
       margin-bottom: 2rem; } }
 
 .page-title {
@@ -717,12 +705,10 @@ z
       line-height: 6rem;
       text-align: left; } }
 
-z
 .main-section-margin {
   margin-bottom: 5rem; }
   @media (max-width: 480px) {
-    z
-.main-section-margin {
+    .main-section-margin {
       margin-bottom: 2rem; } }
 
 .projects {
@@ -778,12 +764,10 @@ z
           padding: 0;
           margin-left: 1rem; } }
 
-z
 .main-section-margin {
   margin-bottom: 5rem; }
   @media (max-width: 480px) {
-    z
-.main-section-margin {
+    .main-section-margin {
       margin-bottom: 2rem; } }
 
 .filter > .filter-masking {
