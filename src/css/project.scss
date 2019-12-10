@@ -31,6 +31,7 @@ body {
         top: 50%;
         left: 10%;
         transform: translate(0, -50%);
+
         * {
             color: white;
         }
@@ -39,13 +40,14 @@ body {
     &__img {
         width: 100%;
         font-size: 0;
+
         img {
             width: 100%;
             height: auto;
         }
     }
 
-    @include media-M  {
+    @include media-M {
         .hero__title {
             display: none;
         }
@@ -59,7 +61,8 @@ body {
     justify-content: space-between;
     padding: 1rem 0;
     flex-wrap: wrap;
-    > * {
+
+    >* {
         margin-top: $gallery-gap;
     }
 
@@ -86,41 +89,49 @@ body {
         width: 45%;
         height: 100%;
         display: flex;
-        align-items: flex-end;
-        flex-wrap: wrap;
+        align-items: flex-start;
         padding-top: 0%;
 
-        >* {
-            display: inline-block;
-            margin: 0 0.4rem 0 0;
-        }
-
         hr {
-            position: relative;
             z-index: 2;
             border: 2px solid $color-main;
-            width: 5rem;
-            margin-bottom: 0.5rem;
-        }
-        p {
-            
+            margin-top: 1rem;
+            margin-right: 0.5rem;
+            flex-grow: 1;
+            flex-basis: 5rem;
+            flex-shrink: 0;
         }
 
-        h1 {
-            right: 0;
-            font-size: 3rem;
-            line-height: 3rem;
-            vertical-align: middle;
-            color: $color-orange;
-            margin-left: auto;
-            
+        .text {
+            flex-shrink: 1;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            p {
+                display: inline-block;
+                margin: 0;
+            }
+
+            h1 {
+                display: inline-block;
+                margin: 0;
+                right: 0;
+                font-size: 3rem;
+                line-height: 3rem;
+                vertical-align: middle;
+                color: $color-orange;
+                margin-left: auto;
+
+            }
         }
+
     }
 
 
     @include media-M {
         padding: 0;
         flex-direction: column;
+
         .description {
             order: -1;
         }
@@ -128,9 +139,11 @@ body {
         .img {
             width: 100%;
             font-size: 0;
+
             &:nth-child(1) {
                 order: 2;
             }
+
             &:nth-child(2) {
                 order: 10;
                 margin-bottom: 3rem;
@@ -144,10 +157,13 @@ body {
             align-self: center;
             flex-direction: column;
             align-items: center;
+
             hr {
                 height: 5rem;
                 width: 0;
+                margin: 0 0 1rem 0;
             }
+
             p {
                 text-align: center;
             }
