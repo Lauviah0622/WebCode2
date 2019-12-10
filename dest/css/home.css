@@ -671,6 +671,7 @@ a {
   .projects * {
     position: inherit; }
   .projects .project-img {
+    font-size: 0;
     margin: 0;
     -webkit-box-flex: 1;
             flex: auto 1 1;

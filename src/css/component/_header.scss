@@ -30,7 +30,9 @@
             transition-duration: .5s;
             height: 100vh;
         }
-    };
+    }
+
+    ;
 }
 
 .nav-logo {
@@ -40,10 +42,9 @@
 
 .nav-box {
     flex: 1;
-
     @include media-M {
         display: none;
-    };
+    }
 }
 
 .nav-menu {
@@ -101,7 +102,7 @@
 
     @include media-M {
         align-self: flex-start;
-        
+
         ul {
             margin: 1rem;
             flex-direction: column;
@@ -114,23 +115,19 @@
             display: block;
             margin: 1.5rem;
             font-size: 1.5rem;
+
             a::after {
                 bottom: -0.4rem;
-    
             }
         }
-
-
     }
-
-    ;
 }
 
 .nav.open {
     .nav-menu ul {
+        
         transform: translate(0%, 0%);
         opacity: 1;
-
     }
 
     .nav-icon div {
