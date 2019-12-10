@@ -7,7 +7,7 @@
     transition: 0.5s;
     
     @include media-S {
-        filter: grayscale(0%);
+        // filter: grayscale(0%);
         
     }
 }
@@ -52,9 +52,9 @@
 {
     @include media-M {
         &::after {
-            display: none;
+            // display: none;
         }
-        filter: none;
+        // filter: none;
     }
 }
 
