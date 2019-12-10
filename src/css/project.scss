@@ -24,25 +24,30 @@ body {
 
 .hero {
     position: relative;
-    width: 100%;
+    width: 100vw;
 
     &__title {
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        transform: translate(0, -50%);
         * {
             color: white;
         }
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        @include abs-center;
-
-
     }
 
     &__img {
+        width: 100%;
+        font-size: 0;
         img {
             width: 100%;
             height: auto;
-            
+        }
+    }
+
+    @include media-M  {
+        .hero__title {
+            display: none;
         }
     }
 }
@@ -50,16 +55,16 @@ body {
 
 .content {
     position: relative;
-    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
     flex-wrap: wrap;
-    padding-top: $gallery-gap;
-    > div {
-        margin-bottom: $gallery-gap;
-        display: flex;
+    > * {
+        margin-top: $gallery-gap;
     }
+
     .description {
         width: 45%;
-        // background-color: rgb(224, 105, 105);
     }
 
     .img {
@@ -70,22 +75,26 @@ body {
             width: 100%;
             height: auto;
         }
+
         // background-color: rgb(105, 224, 194);
 
     }
 
     .score {
+        align-self: flex-end;
+        margin-bottom: 3rem;
+        width: 45%;
         height: 100%;
-        position: relative;
-        padding-top: 180px;
         display: flex;
         align-items: flex-end;
+        flex-wrap: wrap;
+        padding-top: 0%;
 
-        > *{
+        >* {
             display: inline-block;
             margin: 0 0.4rem 0 0;
         }
-        
+
         hr {
             position: relative;
             z-index: 2;
@@ -93,13 +102,59 @@ body {
             width: 5rem;
             margin-bottom: 0.5rem;
         }
+        p {
+            
+        }
 
         h1 {
-            font-size: 4rem;
-            line-height: 4rem;
+            right: 0;
+            font-size: 3rem;
+            line-height: 3rem;
             vertical-align: middle;
             color: $color-orange;
+            margin-left: auto;
+            
         }
     }
 
+
+    @include media-M {
+        padding: 0;
+        flex-direction: column;
+        .description {
+            order: -1;
+        }
+
+        .img {
+            width: 100%;
+            font-size: 0;
+            &:nth-child(1) {
+                order: 2;
+            }
+            &:nth-child(2) {
+                order: 10;
+                margin-bottom: 3rem;
+
+            }
+        }
+
+        .score {
+            order: 3;
+            margin: 0;
+            align-self: center;
+            flex-direction: column;
+            align-items: center;
+            hr {
+                height: 5rem;
+                width: 0;
+            }
+            p {
+                text-align: center;
+            }
+
+            h1 {
+                margin-left: 0;
+            }
+        }
+    }
 }
