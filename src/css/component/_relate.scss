@@ -7,6 +7,7 @@
     h1 {
         line-height: 3rem;
         font-size: 1.5rem;
+        
     }
 
     &__imgs {
@@ -19,4 +20,37 @@
             padding: 1rem;
         }
     }
+
+    @media (max-width: $layout-breakpoint-M) and (min-width: $layout-breakpoint-S + 1) {
+        &__imgs {
+            > a:nth-last-child(1) {
+                display: none;
+            }
+        }
+    }
+
+    @include media-S {
+        padding-bottom: 2.5rem;
+
+        h1 {
+            text-align: center;
+            margin: 0.5rem 0;
+        }
+
+
+        &__imgs {
+            // flex-direction: column;
+            margin: -0.5rem;
+            flex-wrap: wrap;
+            a {
+                width: 50%;
+            }
+            img {
+                padding: 0.5rem;
+            }
+        }
+    }
+    
+
+
 }
