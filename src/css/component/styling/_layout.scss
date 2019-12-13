@@ -23,13 +23,6 @@ $layout-breakpoint-S: 480px;
     }
 };
 
-.main-section-margin {
-    margin-bottom: 5rem;
-
-    @include media-S {
-        margin-bottom: 2rem;
-    }
-}
 
 
 @mixin abs-center {

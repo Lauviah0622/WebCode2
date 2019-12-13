@@ -46,18 +46,6 @@
     }
 }
 
-.filter,
-.fade-in,
-.filter-masking,
-{
-    @include media-M {
-        &::after {
-            // display: none;
-        }
-        // filter: none;
-    }
-}
-
 @mixin hover-style {
     content: "";
     position: absolute;
