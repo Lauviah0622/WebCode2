@@ -37,7 +37,7 @@
 }
 
 .filter:hover {
-    &>.filter-masking {
+    .filter-masking {
         filter: grayscale(0%) brightness(50%) contrast(119%);
         @include media-S {
             filter: none;
