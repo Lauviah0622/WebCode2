@@ -226,11 +226,25 @@
                 transition-duration: 0.5s;
             }
 
-            .filter:after {
+            .filter::after {
                 z-index: -1;
             }
 
-            .filter:hover {
+
+            .more-btn {
+                pointer-events: none;
+                height: 50px;
+                transform: rotate(180deg);
+
+                .arrow {
+                    transition: 0.5s;
+                    stroke: white;
+                }
+            }
+        }
+
+        &.more:hover {
+            .filter {
                 h3 {
                     color: white;
                 }
@@ -243,17 +257,6 @@
                 .arrow {
                     stroke: $color-orange;
                     // transition: 0.5s;
-                }
-            }
-
-            .more-btn {
-                pointer-events: none;
-                height: 50px;
-                transform: rotate(180deg);
-
-                .arrow {
-                    transition: 0.5s;
-                    stroke: white;
                 }
             }
         }
@@ -349,12 +352,12 @@
         flex: auto 1 1;
         margin: 1vw;
 
-        &::after {
-            position: absolute;
-            content: "";
-            display: block;
-            padding-bottom: 100%;
-        }
+        // &::before {
+        // position: absolute;
+        //     content: "";
+        //     display: block;
+        //     padding-bottom: 100%;
+        // }
 
         >img {
             height: 100%;

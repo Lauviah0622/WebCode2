@@ -95,7 +95,7 @@ body {
         hr {
             z-index: 2;
             border: 2px solid $color-main;
-            margin-top: 1rem;
+            margin-top: 1.3rem;
             margin-right: 0.5rem;
             flex-grow: 1;
             flex-basis: 5rem;
@@ -111,12 +111,15 @@ body {
             p {
                 display: inline-block;
                 margin: 0;
+                font-size: 0.8em;
+                color: $color-darkGrey;
             }
 
             h1 {
                 display: inline-block;
                 margin: 0;
                 right: 0;
+                padding-left: 0.5rem;
                 font-size: 3rem;
                 line-height: 3rem;
                 vertical-align: middle;

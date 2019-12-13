@@ -16,3 +16,52 @@
 // @import "component/project-banner";
 @import "component/page-title";
 @import "component/work-cates-list";
+
+.work-block {
+    margin-bottom: 2rem;
+    &__title {
+        * {
+            display: inline-block;
+
+            @include media-S {
+                display: block;
+            }
+        }
+
+        h1 {
+            margin-right: 5px;
+            font-weight: normal;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -5px;
+        font-size: 0;
+        @include media-S {
+            margin: 0;
+        }
+
+        a {
+            width: 25%;
+            display: block;
+            @include media-M {
+                width: 33.33%;
+            }
+            @include media-S {
+                width: 50%
+            }   
+        }
+
+        img {
+            padding: 5px;
+            width: 100%;
+            height: auto;
+
+
+        }
+    }
+}

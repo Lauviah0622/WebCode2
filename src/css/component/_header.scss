@@ -102,7 +102,7 @@
 
     @include media-M {
         align-self: flex-start;
-
+        pointer-events: none;
         ul {
             margin: 0rem;
             flex-direction: column;
@@ -115,7 +115,7 @@
             display: block;
             margin: 1.5rem;
             font-size: 1.5rem;
-
+            text-shadow: 0 0 3px #00000055;
             a::after {
                 bottom: -0.4rem;
             }
@@ -141,6 +141,11 @@
 
         &:nth-child(3) {
             transform: translate(0, 0) rotate(-45deg)
+        }
+    }
+    @include media-M {
+        .nav-menu {
+            pointer-events: initial;
         }
     }
 }

@@ -44,32 +44,38 @@
 
 
         <div class="project__item">
-            <figure class="project-img filter">
-                <img src="./asset/img/projects/大專案_Edward/究極消臭大專案-首頁.jpg" class="filter-masking">
-            </figure>
+            <a href="project.html">
+                <figure class="project-img filter">
+                    <img src="./asset/img/projects/大專案_Edward/究極消臭大專案-首頁.jpg" class="filter-masking">
+                </figure>
+            </a>
             <div class="project-content">
                 <h1 class="brand">白蘭</h1>
                 <div class="line">
                     <svg xmlns='http://www.w3.org/2000/svg' version='1.1' viewBox='0 0 10 10'>
                         <path d='M 10 0 L 0 10 ' fill='none' stroke-width='2%' stroke='#077579' /></svg>
                 </div>
+                <a href="project.html">
                 <div class="title">
                     <h3>酵素超濃縮洗衣精</h3>
                     <span>聯合利華</span> <span>包裝設計</span>
                 </div>
+                </a>
             </div>
         </div>
+
         <% } %>
 
 
-        <div class="more">
-            <h3>More Projects</h3>
-            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100">
-                <polyline class="arrow" stroke="#EC6C1F" fill="none" stroke-width="15" stroke-miterlimit="10"
-                    points="32,10 71.8,49.8 32,89.6 " />
-            </svg>
-
-        </div>
+        <a href="projects.html">
+            <div class="more">
+                <h3>More Projects</h3>
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100 100">
+                    <polyline class="arrow" stroke="#EC6C1F" fill="none" stroke-width="15" stroke-miterlimit="10"
+                        points="32,10 71.8,49.8 32,89.6 " />
+                </svg>
+            </div>
+        </a>
 
     </section>
     <section class="works block-margin narrow">
@@ -81,8 +87,8 @@
             <% } %>
 
 
-            <figure class="work__item more">
-                <a href="./works.html">
+            <a href="./works.html">
+                <figure class="work__item more">
                     <div class="filter">
                         <div class="title">
                             <h3>More Works</h3>
@@ -94,16 +100,15 @@
                             </svg>
                         </div>
                     </div>
-                </a>
-            </figure>
+                </figure>
+            </a>
         </div>
     </section>
     <section class="brands block-margin narrow">
         <div class="brands-container">
-            <% for(var i = 0; i < 2; i++) { %>
-                <figure class="brands-logo"><img src="./asset/logo/nestle-4.svg" alt=""></figure>
-                <figure class="brands-logo"><img src="./asset/logo/unilever-2.svg" alt=""></figure>
-                <figure class="brands-logo"><img src="./asset/logo/mondelez-international-1.svg" alt=""></figure>
+            <% for(var i = 0; i < 3; i++) { %>
+            <figure class="brands-logo"><img src="./asset/logo/nestle-4.svg" alt=""></figure>
+            <figure class="brands-logo"><img src="./asset/logo/unilever-2.svg" alt=""></figure>
             <% } %>
         </div>
     </section>

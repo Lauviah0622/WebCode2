@@ -2,6 +2,7 @@
     .name {
         h1 {
             margin-bottom: 0.2em;
+            font-weight: normal;
         }
         h3 {
             margin-top: 0.2em;
@@ -9,6 +10,9 @@
     }
 
     .credit {
+        * {
+            color: $color-darkGrey;
+        }
         span {
             line-height: 2em;
             &::after {
