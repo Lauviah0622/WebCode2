@@ -74,39 +74,27 @@
     </section>
     <section class="works block-margin narrow">
         <div class="work-container">
-            <% for (var i = 0; i< 4; i++) {%>
-
+            <% for (var i = 0; i< 6; i++) {%>
+                <figure class="">
+                    <%- include('component/_work-item', {workItem: workItem}) %>
+                </figure>
             <% } %>
-            <figure class="w2h1-1">
-                <%- include('component/_work-item', {workItem: workItem}) %>
-            </figure>
-            <figure class="work__item w1h2-2">
-                <%- include('component/_work-item', {workItem: workItem}) %>
-            </figure>
-            <figure class="work__item w1h1-3">
-                <%- include('component/_work-item', {workItem: workItem}) %>
-            </figure>
-            <figure class="work__item w1h1-4">
-                <%- include('component/_work-item', {workItem: workItem}) %>
-            </figure>
-            <figure class="work__item w1h1-5">
-                <%- include('component/_work-item', {workItem: workItem}) %>
-            </figure>
-            <figure class="work__item w2h2-6">
-                <%- include('component/_work-item', {workItem: workItem}) %>
-            </figure>
-            <figure class="work__item w1h1-7 more">
-                <div class="filter">
-                    <div class="title">
-                        <h3>More Projects</h3>
-                        <svg version="1.1" id="" xmlns="http://www.w3.org/2000/svg"
-                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100"
-                            class="more-btn">
-                            <polyline fill="none" stroke="#ec6c1f" stroke-width="10" stroke-miterlimit="10"
-                                points="13.5,63.1 50,36.9 86.5,63.1 " class="arrow" />
-                        </svg>
+
+            
+            <figure class="work__item more">
+                <a href="">
+                    <div class="filter">
+                        <div class="title">
+                            <h3>More Projects</h3>
+                            <svg version="1.1" id="" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100"
+                                class="more-btn">
+                                <polyline fill="none" stroke="#ec6c1f" stroke-width="10" stroke-miterlimit="10"
+                                    points="13.5,63.1 50,36.9 86.5,63.1 " class="arrow" />
+                            </svg>
+                        </div>
                     </div>
-                </div>
+                    </a>
             </figure>
         </div>
     </section>

@@ -171,18 +171,19 @@
         gap: 5px;
 
         @include media-L {
-            grid-template-rows: repeat(4, calc(70vw / 3));
+            grid-auto-rows: calc(70vw / 3);
         }
 
         @include media-M {
-            grid-template-rows: repeat(4, calc(33vw - 33px));
+            grid-auto-rows: calc(33vw - 33px);
         }
 
         @include media-XL {
-            grid-template-rows: repeat(4, calc(800px / 3));
+            grid-auto-rows: calc(800px / 3);
         }
 
-        grid-template-areas: "w2h1-1 w2h1-1 w1h2-2"
+        grid-template-areas: 
+        "w2h1-1 w2h1-1 w1h2-2"
         "w1h1-3 w1h1-4 w1h2-2"
         "w1h1-5 w2h2-6 w2h2-6"
         "w1h1-7 w2h2-6 w2h2-6";
@@ -216,7 +217,7 @@
         }
 
         &.more {
-            >div {
+            > div {
                 width: 100%;
                 height: 100%;
             }
@@ -260,25 +261,24 @@
     }
 
     @include media-S {
+        margin: 0;
         .work-container {
             display: flex;
             flex-wrap: wrap;
         }
 
         .work__item {
-            &:nth-child(1) {
-                width: 33%;
-
-                &::after {
-                    content: ''
-                }
+            width: 50%;
+            height: 33vw;
+            .img {
+                object-fit: cover;
             }
 
-            &:nth-child(2) {
-                width: 66%;
-            }
         }
 
+        .more {
+            width: 100%;
+        }
     }
 }
 
