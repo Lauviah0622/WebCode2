@@ -9,7 +9,7 @@
     <%- include("component/_nav", {current: current})%>
     <section class="content block-margin wide">
         <div class="map">
-            <div></div>
+            <div id="map"></div>
         </div>
         <div class="info">
             <h1>好應整合行銷公司</h1>
@@ -25,6 +25,11 @@
         </div>
     </section>
     <%- include('component/_footer'); %>
+    <script src="./js/contact.js"></script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBrcLCa8pD1ybpLppGO_067SvoTuDmUW3E&callback=initMap" type="text/javascript">
+
+  </script>
 
 </body>
 
