@@ -51,9 +51,14 @@
 }
 
 .work-block {
+    margin-bottom: 2rem;
     &__title {
         * {
             display: inline-block;
+
+            @include media-S {
+                display: block;
+            }
         }
 
         h1 {
@@ -67,10 +72,20 @@
         display: flex;
         flex-wrap: wrap;
         margin: 0 -5px;
+        font-size: 0;
+        @include media-S {
+            margin: 0;
+        }
 
         a {
             width: 25%;
-            display: block;   
+            display: block;
+            @include media-M {
+                width: 33.33%;
+            }
+            @include media-S {
+                width: 50%
+            }   
         }
 
         img {
