@@ -21,6 +21,8 @@
 
 
 .works {
+
+
     &.block-margin.wide {
         @include media-XL {
             max-width: 1440px;
@@ -30,76 +32,115 @@
     .container {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        grid-auto-rows: 1fr;
-        margin: 5px -5px 5rem 5px;
         gap: 5px;
-        @include media-L {
-            grid-template-rows: repeat(4, calc(70vw / 3));
-        }
+        margin-bottom: 3rem;
 
         @include media-M {
-            grid-template-rows: repeat(4, calc(33vw - 33px));
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: calc(33vw - 33px);
+        }
+
+        @include media-S {
+            grid-template-columns: repeat(2, 1fr);
+            grid-auto-rows: min-content;
+        }
+
+        @include media-L {
+            grid-auto-rows: calc(25vw - 25px);
         }
 
         @include media-XL {
-            grid-template-rows: repeat(4, calc(800px / 3));
+            grid-auto-rows: 20vw;
         }
 
-
-        &>*:first-child {
-            grid-row: 1 / 1;
-            grid-column: 1 / 1;
+        @media (min-width: 1800px) {
+            grid-auto-rows: 356.25px;
         }
     }
 
     .item {
         position: relative;
         margin: 0;
-        &:nth-child()::after {
-            content: '';
-            padding-bottom: 100%;
-            display: block;
-
-        }
 
         @mixin item-block($order, $gStart, $gEnd) {
             &:nth-child(6n + #{$order}) {
                 grid-column-start: $gStart;
                 grid-column-end: $gEnd;
-                
+
             }
         }
-        
-        @include item-block(1, 1, 3);
-        @include item-block(2, 3, 4);
-        @include item-block(3, 4, 5);
-        @include item-block(4, 1, 2);
-        @include item-block(5, 2, 3);
-        @include item-block(6, 3, 5);
+
+        @include media-L {
+            @include item-block(1, 1, 3);
+            @include item-block(2, 3, 4);
+            @include item-block(3, 4, 5);
+            @include item-block(4, 1, 2);
+            @include item-block(5, 2, 3);
+            @include item-block(6, 3, 5);
+        }
+
+
+        @mixin item-block-m($order, $gStart, $gEnd) {
+            &:nth-child(10n + #{$order}) {
+                grid-column-start: $gStart;
+                grid-column-end: $gEnd;
+            }
+        }
+
+        @media (min-width: $layout-breakpoint-S + 1) and (max-width: $layout-breakpoint-M) {
+
+            @include item-block-m(1, 1, 2);
+            @include item-block-m(2, 2, 4);
+            @include item-block-m(3, 1, 2);
+            @include item-block-m(4, 2, 3);
+            @include item-block-m(5, 3, 4);
+            @include item-block-m(6, 1, 3);
+            @include item-block-m(7, 3, 4);
+            @include item-block-m(8, 1, 2);
+            @include item-block-m(9, 2, 3);
+            @include item-block-m(10, 3, 4);
+        }
 
     }
 
     .work__item {
+
+        // display: none;
         @include work-gallery-item;
 
+        @include media-S {
+            & .img {
+                height: auto;
+                filter: none;
+            }
+
+            & .title {
+                opacity: 1;
+                text-align: left;
+                position: relative;
+                transform: none;
+                top: 0;
+                left: 0;
+                padding-top: 0.3rem;
+                padding-bottom: 1rem;
+
+                * {
+                    color: $color-main;
+                }
+
+                h3 {
+                    margin: 0;
+                    margin-bottom: 0.5rem;
+                }
+
+                p {
+                    margin: 0;
+                }
+            }
+        }
     }
 
     h1 {
         display: inline-block;
     }
-
-    @include media-S {
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            &::before {
-                display: none;
-            }
-
-            margin: 0;
-        }        
-        
-    }
-
-
 }

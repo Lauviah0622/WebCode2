@@ -12,6 +12,7 @@
 html {
     // width: 100%;
 }
+
 body {
     margin: 0;
     padding: 0;
@@ -23,11 +24,15 @@ body {
 html {
     @include media-S {
         font-size: 12px;
-    };
+    }
+
+    ;
 
     @include media-M {
         font-size: 14px;
-    };
+    }
+
+    ;
 
     @include media-L {}
 
@@ -72,7 +77,7 @@ a {
         margin: 20px auto;
 
         @include media-S {
-            
+
             width: 20rem;
         }
     }
@@ -93,16 +98,18 @@ a {
         }
 
         margin: 0 auto;
-    };
+    }
+
+    ;
 
 
     @media (min-width: $layout-breakpoint-M + 1) and (max-width: $layout-breakpoint-L) {
-        
-        &.wide {    
+
+        &.wide {
             margin: 0 50px;
-                    
+
         }
-        
+
         &.narrow {
             max-width: 1024px;
             width: 70vw;

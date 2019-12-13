@@ -7,7 +7,7 @@
     transition: 0.5s;
     
     @include media-S {
-        // filter: grayscale(0%);
+        filter: grayscale(0%);
         
     }
 }
@@ -24,6 +24,10 @@
     background-color: $color-lightGrey;
     opacity: 0.4;
     transition-duration: 0.5s;
+    @include media-S {
+        display: none;
+    }
+
 
 }
 
@@ -35,6 +39,9 @@
 .filter:hover {
     &>.filter-masking {
         filter: grayscale(0%) brightness(50%) contrast(119%);
+        @include media-S {
+            filter: none;
+        }
     }
 
     &::after {

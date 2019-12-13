@@ -7,12 +7,6 @@
     
     
     $item-margin: 5px;
-    @include media-S {
-        width: calc(50% - #{$item-margin * 2});
-        >div {
-            display: flex;
-        }
-    }
 
     img {
         width: 100%;
