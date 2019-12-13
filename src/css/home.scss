@@ -272,12 +272,26 @@
         .work-container {
             display: flex;
             flex-wrap: wrap;
-            margin: -2px;
 
+            // margin: -2px;
             >figure {
                 width: 50%;
                 height: 33vw;
-                padding: 2px;
+                padding: 2px 0;
+
+            }
+
+            >figure:nth-child(2n + 1) {
+                padding-right: 2px;
+            }
+
+            >figure:nth-child(2n) {
+                padding-left: 2px;
+            }
+
+            >figure.more {
+                padding-left: 0;
+                padding-right: 0;
             }
 
             @include work-item-s (1, 50%);
@@ -289,7 +303,11 @@
 
             .more {
                 width: 100%;
-                background-color: $color-lightGrey;
+
+                .filter {
+                    background-color: $color-lightGrey;
+                    height: 100%;
+                }
 
                 .more-btn {
                     .arrow {

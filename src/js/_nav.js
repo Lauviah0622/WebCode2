@@ -65,7 +65,7 @@ navMenu.addEventListener('click', function (e) {
 
 document.addEventListener('scroll', throttle((e) => {
     // scroll close anv
-    console.log(e);
+    // console.log(e);
     nav.classList.remove('open');
 
 }, 200))
