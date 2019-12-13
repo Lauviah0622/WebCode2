@@ -111,7 +111,7 @@
 
 
     .filter:hover>img {
-        filter: grayscale(0%);
+        filter: grayscale(10);
 
     }
 
@@ -182,8 +182,7 @@
             grid-auto-rows: calc(800px / 3);
         }
 
-        grid-template-areas: 
-        "w2h1-1 w2h1-1 w1h2-2"
+        grid-template-areas: "w2h1-1 w2h1-1 w1h2-2"
         "w1h1-3 w1h1-4 w1h2-2"
         "w1h1-5 w2h2-6 w2h2-6"
         "w1h1-7 w2h2-6 w2h2-6";
@@ -217,7 +216,7 @@
         }
 
         &.more {
-            > div {
+            >div {
                 width: 100%;
                 height: 100%;
             }
@@ -260,24 +259,60 @@
         }
     }
 
+
+    @mixin work-item-s($order, $width) {
+        >figure:nth-child(#{$order}) {
+            width: $width;
+        }
+    }
+
     @include media-S {
         margin: 0;
+
         .work-container {
             display: flex;
             flex-wrap: wrap;
+            margin: -2px;
+
+            >figure {
+                width: 50%;
+                height: 33vw;
+                padding: 2px;
+            }
+
+            @include work-item-s (1, 50%);
+            @include work-item-s (2, 50%);
+            @include work-item-s (3, 33.3%);
+            @include work-item-s (4, 66.6%);
+            @include work-item-s (5, 66.6%);
+            @include work-item-s (6, 33.3%);
+
+            .more {
+                width: 100%;
+                background-color: $color-lightGrey;
+
+                .more-btn {
+                    .arrow {
+                        stroke: $color-orange;
+                    }
+                }
+
+                h3 {
+                    color: white
+                }
+
+
+            }
         }
 
         .work__item {
-            width: 50%;
-            height: 33vw;
-            .img {
-                object-fit: cover;
+            .title {
+                opacity: 1;
             }
 
-        }
-
-        .more {
-            width: 100%;
+            img {
+                filter: grayscale(10) brightness(70%) contrast(80%);
+            }
         }
     }
 }
@@ -306,13 +341,15 @@
         >img {
             height: 100%;
             width: 100%;
-            filter: grayscale(1) brightness(350%);
+            filter: grayscale(1) brightness(200%);
+            transition-duration: .5s;
 
 
-            &::after {
-                content: "";
-                display: block;
+        }
 
+        &:hover {
+            >img {
+                filter: grayscale(0) brightness(100%);
 
             }
         }
@@ -321,7 +358,7 @@
     @include media-S {
         >div {
             flex-direction: column;
-            padding: 0 30%;
+            padding: 0 37%;
         }
 
     }

@@ -75,17 +75,17 @@
     <section class="works block-margin narrow">
         <div class="work-container">
             <% for (var i = 0; i< 6; i++) {%>
-                <figure class="">
-                    <%- include('component/_work-item', {workItem: workItem}) %>
-                </figure>
+            <figure>
+                <%- include('component/_work-item', {workItem: workItem}) %>
+            </figure>
             <% } %>
 
-            
+
             <figure class="work__item more">
-                <a href="">
+                <a href="./works.html">
                     <div class="filter">
                         <div class="title">
-                            <h3>More Projects</h3>
+                            <h3>More Works</h3>
                             <svg version="1.1" id="" xmlns="http://www.w3.org/2000/svg"
                                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100"
                                 class="more-btn">
@@ -94,18 +94,17 @@
                             </svg>
                         </div>
                     </div>
-                    </a>
+                </a>
             </figure>
         </div>
     </section>
     <section class="brands block-margin narrow">
         <div class="brands-container">
-            <figure class="brands-logo"><img src="./asset/logo/mondelez-international-1.svg" alt=""></figure>
-            <figure class="brands-logo"><img src="./asset/logo/mondelez-international-1.svg" alt=""></figure>
-            <figure class="brands-logo"><img src="./asset/logo/mondelez-international-1.svg" alt=""></figure>
-            <figure class="brands-logo"><img src="./asset/logo/mondelez-international-1.svg" alt=""></figure>
-            <figure class="brands-logo"><img src="./asset/logo/mondelez-international-1.svg" alt=""></figure>
-            <figure class="brands-logo"><img src="./asset/logo/mondelez-international-1.svg" alt=""></figure>
+            <% for(var i = 0; i < 2; i++) { %>
+                <figure class="brands-logo"><img src="./asset/logo/nestle-4.svg" alt=""></figure>
+                <figure class="brands-logo"><img src="./asset/logo/unilever-2.svg" alt=""></figure>
+                <figure class="brands-logo"><img src="./asset/logo/mondelez-international-1.svg" alt=""></figure>
+            <% } %>
         </div>
     </section>
     <%- include('component/_footer'); %>
