@@ -31,6 +31,7 @@ console.log('home');
 
     /* set scroll trigger */
     addEventListener('scroll', throttle(animationPlay, 20));
+    addEventListener('load', throttle(animationPlay, 20));
     // requestAnimationFrame(animationPlay)
 
     // fillTransitionElements.forEach(el => {

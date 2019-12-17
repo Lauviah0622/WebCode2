@@ -6,6 +6,8 @@
 </head>
 
 <body class="<%= current%>" id="<%= current%>">
+    <div id="particles" class=""></div>
+
     <svg class="clip-path">
         <clipPath id="clip-path">
             <polygon
@@ -13,7 +15,7 @@
         </clipPath>
 
     </svg>
-    <div id="top-btn" class="top-btn top">
+    <div id="top-btn" class="top-btn">
         <div>
             <svg version="1.1" id="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                 x="0px" y="0px" viewBox="0 0 100 100">
@@ -66,8 +68,8 @@
             <% } %>
 
 
-            <a href="./works.html">
-                <figure class="work__item more">
+            <figure class="work__item more fill-in-effect">
+                <a href="./works.html">
                     <div class="filter">
                         <div class="title">
                             <h3>More Works</h3>
@@ -79,8 +81,8 @@
                             </svg>
                         </div>
                     </div>
-                </figure>
-            </a>
+                </a>
+            </figure>
         </div>
     </section>
     <section class="brands block-margin narrow">
@@ -92,8 +94,12 @@
         </div>
     </section>
     <%- include('component/_footer'); %>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
     <script src="js/fillIn.js"></script>
+    <script src="js/_topbtn.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/home.js"></script>
 </body>
 
 </html>

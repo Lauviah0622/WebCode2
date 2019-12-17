@@ -5,7 +5,7 @@ import browserSync from "browser-sync";
 const $ = require('gulp-load-plugins')();
 
 export function js() {
-    return gulp.src('./src/js/*.js')
+    return gulp.src('./src/js/*', )
     .pipe(gulp.dest('./dest/js'))
 }
 
