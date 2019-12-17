@@ -73,6 +73,10 @@
 .visual {
     height: 85vh;
     position: relative;
+    pointer-events: none;
+    z-index: 10;
+    transition-duration: 0.1s;
+
 
 
     .visual-wrapper {
@@ -104,6 +108,38 @@
         .mask {
             background-color: rgb(223, 106, 106);
         }
+    }
+
+    // merge
+
+    #visual .video-clip {
+        position: absolute;
+        top: 0;
+        left: 0;
+    
+    }
+    
+    
+    .video-border {
+        position: absolute;
+        top: 0;
+        left: 0;
+        /* z-index: 1; */
+        transform: scale(2);
+        /* opacity: 0; */
+    }
+    
+    .loading-stroke {
+        stroke-dasharray: 1000;
+        /* stroke-width: 5; */
+        /* stroke: rgb(252, 179, 23); */
+        stroke-linecap: square;
+        stroke-dashoffset: 1000;
+        /* transition-duration: 500ms; */
+    }
+    
+    .video-clip video {
+        transform: translate(-35%, -20%);
     }
 
 }
