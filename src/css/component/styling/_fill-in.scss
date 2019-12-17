@@ -1,0 +1,42 @@
+.fill-in-effect {
+    overflow: hidden;
+    position: relative;
+}
+
+.fill-in-effect::before {
+    z-index: 3;
+    left: 0;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
+
+.fillEnd::before {
+    animation: move2 0.5s cubic-bezier(.49, 0, .51, 1) 1 0.5s forwards;
+}
+
+@keyframes move {
+    0% {
+        left: -100%;
+    }
+
+    50% {
+        top: 0;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes move2 {
+    0% {
+        left: 0;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
