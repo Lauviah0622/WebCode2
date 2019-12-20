@@ -22,3 +22,19 @@ document.addEventListener('mousedown', function (event) {
         // to not prevent something useful.
     }
 }, false);
+
+
+
+/* movie move */
+(function movieMoveStart() {
+    movieMove()
+    requestAnimationFrame(movieMoveStart);
+    
+})()
+
+
+function movieMove() {
+    const movie = document.querySelector('#visual');
+    let Y = scrollY;
+    movie.style.transform = `translate(0, ${- Y / 30 }%) rotate(${Y / 10}deg)`;    
+}

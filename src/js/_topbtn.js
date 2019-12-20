@@ -1,12 +1,14 @@
 (function scrollTop() {
+    gsap.registerPlugin(ScrollToPlugin)
     console.log('topbtn');
     function scrollTop(event) {
         event.preventDefault()
         console.log('top!')
-        
-        TweenMax.to(window, 1, {
-            scrollTo: 0,
-            ease: Power3.easeInOut
+
+        gsap.to(window, { 
+            duration: 1, 
+            scrollTo: 0, 
+            ease: "power3.inOut" 
         })
     }
 
@@ -26,4 +28,4 @@
             topBtn.classList.remove('top');
         }
     }
-}) ()
+})()
