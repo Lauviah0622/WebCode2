@@ -22,3 +22,4 @@ document.addEventListener('mousedown', function (event) {
         // to not prevent something useful.
     }
 }, false);
+
