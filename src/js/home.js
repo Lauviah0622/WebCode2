@@ -1,6 +1,7 @@
 // isMobileDevice 和 _nav.js相依
 
 /* =====Particles===== */
+
 function createParticle() {
     particlesJS.load('particles', isMobileDevice ? './js/particles-mobile.json' : './js/particles.json', function () {
         console.log('particle.JS OK');

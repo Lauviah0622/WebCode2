@@ -3,13 +3,22 @@
     console.log('topbtn');
     function scrollTop(event) {
         event.preventDefault()
-        console.log('top!')
-
-        gsap.to(window, { 
-            duration: 1, 
-            scrollTo: 0, 
-            ease: "power3.inOut" 
-        })
+        
+        if (scrollY !== 0) {
+            console.log('top!')
+            gsap.to(window, { 
+                duration: 1, 
+                scrollTo: 0, 
+                ease: "power3.inOut" 
+            })
+        } else {
+            console.log('go bottom')
+            gsap.to(window, { 
+                duration: 1, 
+                scrollTo: 700, 
+                ease: "power3.inOut" 
+            })
+        }
     }
 
 

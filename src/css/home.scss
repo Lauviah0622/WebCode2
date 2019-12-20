@@ -63,7 +63,7 @@
 
     &.top {
         right: 50vw;
-        transform: translate(50%, 0) rotate(180deg);
+        transform: translate(75%, 0) rotate(180deg);
 
         >div {
             border: 2px solid #ec6c1fff;
@@ -74,19 +74,16 @@
 
 
 .visual {
-    height: 85vh;
+    height: 80vh;
     position: relative;
     pointer-events: none;
     z-index: 10;
     transition-duration: 0.1s;
-
-
-
     .visual-wrapper {
         position: absolute;
         width: 200px;
         height: 200px;
-        top: 40%;
+        top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         // overflow: hidden;
