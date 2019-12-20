@@ -27,7 +27,10 @@
 }
 
 .clip-path {
-    display: none;
+    width: 0;
+    height: 0;
+    border: none;
+    position: absolute;
 }
 
 .top-btn {
@@ -86,39 +89,30 @@
         top: 40%;
         left: 50%;
         transform: translate(-50%, -50%);
-        overflow: hidden;
+        // overflow: hidden;
 
         >* {
             position: absolute;
             top: 0;
             left: 0;
         }
-    }
 
-    .visual-border {}
 
-    .visual-clip {
-        clip-path: url(#clip-path);
-        background-color: #ffffff;
-        height: 100%;
-        width: 100%;
-        opacity: 0;
-        transform: scale(1.5);
-
-        .mask {
-            background-color: rgb(223, 106, 106);
+        .visual-clip {
+            clip-path: url(#clip-path);
+            background-color: #ffffff;
+            height: 100%;
+            width: 100%;
+            transform: scale(1.5);
+            video {
+                transform: translate(-35%, -20%);
+            }
+            .mask {
+                background-color: rgb(223, 106, 106);
+            }
         }
     }
 
-    // merge
-
-    #visual .video-clip {
-        position: absolute;
-        top: 0;
-        left: 0;
-    
-    }
-    
     
     .video-border {
         position: absolute;
@@ -138,9 +132,6 @@
         /* transition-duration: 500ms; */
     }
     
-    .video-clip video {
-        transform: translate(-35%, -20%);
-    }
 
 }
 
