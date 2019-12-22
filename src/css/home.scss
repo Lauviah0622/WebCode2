@@ -33,6 +33,75 @@
     position: absolute;
 }
 
+.mouse-follow {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    /* height: 15px; */
+    /* width: 15px; */
+    z-index: 100;
+    pointer-events: none;
+    /* transform-origin: center; */
+    transform: translate(-10%, -90%);
+
+    /* transform: translate(-50%, -50%); */
+    div {
+        height: 100%;
+        width: 100%;
+    }
+
+    svg {}
+
+    .mouse-wrapper.show {
+        .sign-fill {
+            opacity: 1;
+            transition-duration: .7s;
+            transition-delay: .5s;
+
+        }
+
+        .sign-stroke {
+            opacity: 1;
+            stroke-dashoffset: 0;
+            transition-delay: 0;
+            transition-duration: 0s, .7s;
+            transition-property: opacity, stroke-dashoffset;
+
+
+        }
+    }
+
+    .mouse-wrapper {
+        animation: 15s linear 0s infinite reverse both running rotate;
+
+        .sign-fill {
+            opacity: 0;
+            transition-duration: .5s;
+        }
+
+        .sign-stroke {
+            opacity: 0;
+            stroke-dasharray: 1000;
+            stroke-linecap: square;
+            stroke-dashoffset: 1000;
+            transition-duration: .5s;
+        }
+    }
+
+    @keyframes rotate {
+        0% {
+            transform: rotate(360deg);
+        }
+
+        100% {
+            transform: rotate(0deg);
+        }
+    }
+}
+
+
+
+
 .top-btn {
     right: 10vw;
     bottom: 10vh;
@@ -79,6 +148,7 @@
     pointer-events: none;
     z-index: 10;
     transition-duration: 0.1s;
+
     .visual-wrapper {
         position: absolute;
         width: 200px;
@@ -88,47 +158,40 @@
         transform: translate(-50%, -50%);
         // overflow: hidden;
 
-        >* {
+        .visual-border {
             position: absolute;
             top: 0;
             left: 0;
+            transform: scale(2);
+            stroke-dasharray: 1000;
+            stroke-linecap: square;
+            stroke-dashoffset: 1000;
         }
 
 
         .visual-clip {
+            position: absolute;
+            top: 0;
+            left: 0;
             clip-path: url(#clip-path);
             background-color: #ffffff;
             height: 100%;
             width: 100%;
             transform: scale(1.5);
+
             video {
                 transform: translate(-35%, -20%);
             }
+
             .mask {
                 background-color: rgb(223, 106, 106);
             }
         }
     }
 
-    
-    .video-border {
-        position: absolute;
-        top: 0;
-        left: 0;
-        /* z-index: 1; */
-        transform: scale(2);
-        /* opacity: 0; */
-    }
-    
-    .loading-stroke {
-        stroke-dasharray: 1000;
-        /* stroke-width: 5; */
-        /* stroke: rgb(252, 179, 23); */
-        stroke-linecap: square;
-        stroke-dashoffset: 1000;
-        /* transition-duration: 500ms; */
-    }
-    
+
+
+
 
 }
 

@@ -71,11 +71,6 @@ document.addEventListener('scroll', throttle((e) => {
 }, 200))
 
 
-
-
-
-
-
 function switchNav(closeOrOpen = null) {
     const navState = nav.classList.contains('open');
     if (!navState) {

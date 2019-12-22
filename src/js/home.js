@@ -14,6 +14,8 @@ window.onload = function () {
     createParticle()
 };
 
+
+
 /* prevent moues double click select*/
 document.addEventListener('mousedown', function (event) {
     if (event.detail > 1) {
@@ -23,7 +25,6 @@ document.addEventListener('mousedown', function (event) {
         // to not prevent something useful.
     }
 }, false);
-
 
 
 /* movie move */
@@ -38,4 +39,22 @@ function movieMove() {
     const movie = document.querySelector('#visual');
     let Y = scrollY;
     movie.style.transform = `translate(0, ${- Y / 30 }%) rotate(${Y / 10}deg)`;    
+}
+
+
+/* pagn in animation */
+
+function pageInAnimation(params) {
+    // 1. moveTop
+    gsap.to(window, { 
+        duration: 1, 
+        scrollTo: 0, 
+        ease: "power3.inOut" 
+    })
+
+    // 2. draw Line
+
+    // 3. movie fade in
+
+    // 4. otherPart in
 }
