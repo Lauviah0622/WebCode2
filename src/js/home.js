@@ -12,9 +12,8 @@ function createParticle() {
 
 window.onload = function () {
     createParticle()
+    pageInAnimation()
 };
-
-
 
 /* prevent moues double click select*/
 document.addEventListener('mousedown', function (event) {
@@ -31,30 +30,58 @@ document.addEventListener('mousedown', function (event) {
 (function movieMoveStart() {
     movieMove()
     requestAnimationFrame(movieMoveStart);
-    
+
 })()
 
 
 function movieMove() {
     const movie = document.querySelector('#visual');
-    let Y = scrollY;
-    movie.style.transform = `translate(0, ${- Y / 30 }%) rotate(${Y / 10}deg)`;    
+    let Y = window.pageYOffset;
+    movie.style.transform = isMobileDevice ? `translate(0, ${- Y / 30}%) rotate(${Y / 10}deg)` :`translate(0, ${- Y / 30}%) rotate(${Y / 10}deg)`;
 }
 
 
 /* pagn in animation */
 
-function pageInAnimation(params) {
-    // 1. moveTop
-    gsap.to(window, { 
-        duration: 1, 
-        scrollTo: 0, 
-        ease: "power3.inOut" 
+function pageInAnimation() {
+    const body = document.querySelector('body')
+    const stroke = document.querySelector('#visual-stroke');
+    const video = document.querySelector('#video');
+
+    let tl = gsap.timeline();
+    tl.to(window, {
+        // 1. moveTop
+        duration: 0.2,
+        scrollTo: 0,
+        ease: "power3.inOut"
+    })
+    .fromTo(stroke, {
+        // 2. draw Line
+        "stroke-dashoffset": 1000
+    }, {
+        duration: 4,
+        "stroke-dashoffset": 0,
+        ease: "power3.inOut"
+    })
+    .fromTo(stroke, {
+        opacity: 1
+    },{
+        opacity: 0,
+        duration: 1,
+        ease: "power3.inOut"
+    }, "-=0.8")
+    .fromTo(video, {
+        opacity: 0
+    }, {
+        opacity: 1,
+        duration: 1,
+        ease: "power3.inOut"
+        
+    }, "-=0.7")
+    .call(() => {
+        if (body.classList.contains('loading')) {
+            body.classList.remove('loading')
+        }
     })
 
-    // 2. draw Line
-
-    // 3. movie fade in
-
-    // 4. otherPart in
 }

@@ -16,6 +16,31 @@
 @import "component/styling/hover";
 @import "component/styling/fill-in";
 
+.home {
+    overflow-y: auto;
+}
+
+.home.loading {
+    overflow-y: hidden;
+    .nav {
+        opacity: 0;
+    }
+
+    .projects {
+        opacity: 0;
+    }
+
+    .top-btn {
+        opacity: 0;
+    }
+
+    .visual-clip {
+        opacity: 0;
+    }
+}
+
+
+
 #particles {
     width: 100vw;
     height: 100vh;
@@ -163,11 +188,12 @@
             top: 0;
             left: 0;
             transform: scale(2);
+
             stroke-dasharray: 1000;
             stroke-linecap: square;
             stroke-dashoffset: 1000;
         }
-
+        
 
         .visual-clip {
             position: absolute;
@@ -185,6 +211,17 @@
 
             .mask {
                 background-color: rgb(223, 106, 106);
+            }
+        }
+
+        @include media-S {
+            .visual-border {
+                transform: scale(1.6);
+
+            }
+            .visual-clip {
+                transform: scale(1.2);
+
             }
         }
     }

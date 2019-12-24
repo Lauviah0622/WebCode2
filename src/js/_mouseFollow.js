@@ -1,5 +1,10 @@
 (function mouse() {
     const sign = document.querySelector('#mouse-follow');
+    if ((typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1)) {
+        sign.style.display = "none";
+        return 
+    }
+
     let aniOn = false;
     let fading = false;
     

@@ -5,7 +5,7 @@
     <%- include('component/_head', {current: current}); %>
 </head>
 
-<body class="<%= current%>" id="<%= current%>">
+<body class="<%= current%> loading" id="<%= current%>">
     <div id="particles" class=""></div>
 
     <svg class="clip-path">
@@ -17,7 +17,6 @@
     <div id="mouse-follow" class="mouse-follow">
         <div id="mouse-wrapper" class="mouse-wrapper">
             <svg viewBox="0 0 256 256">
-
                 <polygon class="sign-fill" id="sign-fill"
                     points="221.4,98.6 199.9,61.4 149,90.8 149,32 106,32 106,90.8 55.1,61.4 33.6,98.6 84.5,128 33.6,157.4 55.1,194.6 106,165.2 106,224 149,224 149,165.2 199.9,194.6 221.4,157.4 170.5,128 "
                     fill="#ec6c1f" />
@@ -27,7 +26,7 @@
             </svg>
         </div>
     </div>
-    <div id="top-btn" class="top-btn">
+    <div id="top-btn" class="top-btn top">
         <div>
             <svg version="1.1" id="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                 x="0px" y="0px" viewBox="0 0 100 100">
@@ -40,7 +39,7 @@
     <%- include("component/_nav", {page: page})%>
     <section id="visual" class="visual">
         <div id="visual-wrapper" class="visual-wrapper">
-            <svg class="visual-border loading-stroke" viewBox="0 0 256 256">
+            <svg id="visual-stroke" class="visual-border loading-stroke" viewBox="0 0 256 256">
                 <polygon
                     points="221.4,98.6 199.9,61.4 149,90.8 149,32 106,32 106,90.8 55.1,61.4 33.6,98.6 84.5,128 33.6,157.4 55.1,194.6 106,165.2 106,224 149,224 149,165.2 199.9,194.6 221.4,157.4 170.5,128 "
                     stroke="#ec6c1f" stroke-width="1%" fill="#ffffff00" />
@@ -52,7 +51,7 @@
             </div>
         </div>
     </section>
-    <section class="projects block-margin narrow">
+    <section class="projects block-margin narrow" id="projects">
         <% for(var i = 0; i< 4; i++) { %>
         <div class="project__item">
             <%- include('component/_project-item', {projectItem: projectItem}) %>

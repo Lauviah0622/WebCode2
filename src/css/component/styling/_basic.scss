@@ -16,8 +16,8 @@ html {
 body {
     margin: 0;
     padding: 0;
-    min-width: 100vw;
-    overflow: auto;
+    width: 100vw;
+    overflow-y: auto;
     overflow-x: hidden;
 }
 
@@ -25,9 +25,7 @@ html {
     @include media-S {
         font-size: 12px;
 
-    }
-
-    ;
+    };
 
     @include media-M {
         font-size: 14px;
@@ -38,6 +36,7 @@ html {
     @include media-L {}
 
     ;
+    overflow-x: hidden;
 }
 
 body {
