@@ -7,7 +7,7 @@
     display: block;
     display: flex;
     justify-content: center;
- 
+
     ul {
         // float: left;
         padding: 0;
@@ -22,69 +22,96 @@
         display: inline-block;
         list-style: none;
         list-style-type: none;
+        text-align: center;
         margin-right: 30px;
+        width: 7rem;
         position: relative;
+
         a {
             text-decoration: none;
 
             span {
                 color: $color-darkGrey;
-                display: inline-block;
-                overflow: hidden;
+                display: block;
                 transition-duration: .3s;
             }
-                
+
         }
 
+        @include hover-underline(".cate-ch", "&");
 
-        .cate-ch {
-            display: inline-block;
+        .cate {
+            height: 1.3rem;
             overflow: hidden;
-            width: 0;
         }
 
         .cate-en {
-            display: inline-block;
-            overflow: hidden;
+            transform: translate(0%, -100%);
+            height: 1.3rem;
+            margin-bottom: 0.1rem;
 
+        }
+
+        .cate-en::before {
+            display: block;
+            height: 1.3rem;
+
+        }
+
+        @mixin inviText ($order, $content) {
+            &:nth-child(#{$order}) .cate-en::before {
+                content: $content;
+            }
+        }
+
+        @include inviText (1, '主視覺');
+        @include inviText (2, '購買點展示設計');
+        @include inviText (3, '包裝設計');
+        @include inviText (4, '所有專案');
+
+        .cate-ch {
+            display: inline-block;
+            position: absolute;
+            height: 0;
+            visibility: hidden;
+
+            &::after {
+                visibility: visible;
+                bottom: -0.2rem;
+                transform: translate(-50%, 0)
+            }
         }
 
         &:hover {
-            .cate-ch {
-                width: auto;
+            .cate-en {
+                transform: translate(0%, 0%);
             }
+        }
+
+        @include media-S {
+            text-align: left;
+            width: auto;
 
             .cate-en {
-                width: 0;
-            }
-        }
-        @mixin cateCh ($content){
-            &::after {
-                content: $content;
-                display: inline-block;
-            }
-        }
-        // &:nth-child(1) .cate {
-        //     @include cateCh("主視覺")
-        // }
-        // &:nth-child(2) .cate {
-        //     @include cateCh("購買點展示設計")
-        // }
-        // &:nth-child(3) .cate {
-        //     @include cateCh("包裝設計")
-        // }
-        // &:nth-child(4) .cate {
-        //     @include cateCh("所有專案")
-        // }
+                transform: translate(0, 0);
 
-        @include hover-underline("&");
+                &::before {
+                    display: none;
+                }
+            }
+
+            .cate-ch {
+                display: none;
+            }
+        }
+
     }
 
     @include media-S {
         justify-content: flex-start;
+
         ul {
             margin-left: 0;
         }
     }
 }
-
