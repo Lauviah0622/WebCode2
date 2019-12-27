@@ -29,20 +29,53 @@
 
             span {
                 color: $color-darkGrey;
+                display: inline-block;
+                overflow: hidden;
+                transition-duration: .3s;
             }
                 
         }
+
+
         .cate-ch {
-            @include media-S {
-                display: none;
+            display: inline-block;
+            overflow: hidden;
+            width: 0;
+        }
+
+        .cate-en {
+            display: inline-block;
+            overflow: hidden;
+
+        }
+
+        &:hover {
+            .cate-ch {
+                width: auto;
             }
 
-            &::after {
-                content: "‧";
+            .cate-en {
+                width: 0;
             }
         }
-        .cate-en {
+        @mixin cateCh ($content){
+            &::after {
+                content: $content;
+                display: inline-block;
+            }
         }
+        // &:nth-child(1) .cate {
+        //     @include cateCh("主視覺")
+        // }
+        // &:nth-child(2) .cate {
+        //     @include cateCh("購買點展示設計")
+        // }
+        // &:nth-child(3) .cate {
+        //     @include cateCh("包裝設計")
+        // }
+        // &:nth-child(4) .cate {
+        //     @include cateCh("所有專案")
+        // }
 
         @include hover-underline("&");
     }

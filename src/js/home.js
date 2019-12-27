@@ -44,7 +44,6 @@ function movieMove() {
 /* pagn in animation */
 
 function pageInAnimation() {
-    const body = document.querySelector('body')
     const stroke = document.querySelector('#visual-stroke');
     const video = document.querySelector('#video');
 
@@ -79,7 +78,13 @@ function pageInAnimation() {
         
     }, "-=0.7")
     .call(() => {
+        const body = document.querySelector('body');
+        const html = document.querySelector('html')
+        if (html.classList.contains('loading')) {
+            html.classList.remove('loading')
+        }
         if (body.classList.contains('loading')) {
+            
             body.classList.remove('loading')
         }
     })

@@ -16,11 +16,11 @@
 @import "component/styling/hover";
 @import "component/styling/fill-in";
 
-.home {
-    overflow-y: auto;
-}
 
-.home.loading {
+
+
+
+html.loading {
     overflow-y: hidden;
     .nav {
         opacity: 0;

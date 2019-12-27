@@ -23,3 +23,12 @@
     }
     
 }
+
+.filter:hover {
+    .filter-masking {
+        filter: grayscale(0%) brightness(100%) contrast(100%);
+        @include media-S {
+            filter: none;
+        }
+    }
+}
